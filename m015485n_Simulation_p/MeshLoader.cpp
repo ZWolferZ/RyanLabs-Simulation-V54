@@ -1,7 +1,6 @@
 #include "MeshLoader.h"
 
 
-
 using namespace std;
 
 namespace MeshLoader
@@ -43,7 +42,6 @@ namespace MeshLoader
 			}
 		}
 	}
-
 
 
 	void LoadTexCoords(ifstream& inFile, Mesh& mesh)
@@ -119,6 +117,4 @@ namespace MeshLoader
 		inFile.close();
 		return mesh;
 	}
-
-	
 }

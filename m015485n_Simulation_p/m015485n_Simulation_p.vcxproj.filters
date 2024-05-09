@@ -21,7 +21,7 @@
     <ClCompile Include="GLUTCallbacks.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="HelloGL.cpp">
+    <ClCompile Include="OpenGL.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="LinkedLists.cpp">
@@ -56,7 +56,7 @@
     <ClInclude Include="GLUTCallbacks.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HelloGL.h">
+    <ClInclude Include="OpenGL.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="LinkedLists.h">

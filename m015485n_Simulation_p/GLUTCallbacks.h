@@ -1,14 +1,15 @@
 #pragma once
+#ifndef _GLUTCALLBACKS_H
+#define GLUTCALLBACKS_H
 #include <string>
 
-class HelloGL;
+class OpenGL;
 
 namespace GLUTCallbacks
 {
+	void Init(OpenGL* gl);
 
-	void Init(HelloGL* gl);
-
-	void Display(void);
+	void Display();
 
 	void keyboardControls(unsigned char key, int x, int y);
 
@@ -27,8 +28,5 @@ namespace GLUTCallbacks
 	void mouseRotation(int x, int y);
 
 	void mouseWheel(int wheel, int direction, int x, int y);
-
-	
-
-
 }
+#endif // _GLUTCALLBACKS_H

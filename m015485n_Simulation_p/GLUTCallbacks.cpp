@@ -1,20 +1,17 @@
 #include "GLUTCallbacks.h"
-#include "HelloGL.h"
+#include "OpenGL.h"
 #include <iostream>
 
 #include "Cube.h"
 
-
 namespace GLUTCallbacks
 {
-	bool fullScreen = true;
-
 	namespace
 	{
-		HelloGL* helloGL = nullptr;
+		OpenGL* helloGL = nullptr;
 	}
 
-	void Init(HelloGL* gl)
+	void Init(OpenGL* gl)
 	{
 		helloGL = gl;
 	}
@@ -110,15 +107,15 @@ namespace GLUTCallbacks
 		}
 	}
 
-	void keyboardControlsUp (unsigned char key, int x, int y)
+	void keyboardControlsUp(unsigned char key, int x, int y)
 	{
-				if (helloGL != nullptr)
-				{
-								helloGL->keyboardControlsUp(key, x, y);
+		if (helloGL != nullptr)
+		{
+			helloGL->keyboardControlsUp(key, x, y);
 		}
 		else
 		{
-						glutLeaveMainLoop();
+			glutLeaveMainLoop();
 		}
 	}
 

@@ -54,7 +54,6 @@ void LoadTexCoords(std::ifstream& inFile, OBJMesh& mesh)
 }
 
 
-
 void LoadNormals(std::ifstream& inFile, OBJMesh& mesh)
 {
 	inFile >> mesh.normalCount;
@@ -77,19 +76,19 @@ OBJMesh* OBJLoader::LoadOBJ(const char* path)
 
 	std::ifstream inFile;
 
-		inFile.open(path);
+	inFile.open(path);
 
-		if (!inFile.good())
-		{
-			std::cerr << "Can't open OBJ file " << path << std::endl;
-			delete mesh;
-			return nullptr;
-		}
+	if (!inFile.good())
+	{
+		std::cerr << "Can't open OBJ file " << path << std::endl;
+		delete mesh;
+		return nullptr;
+	}
 
-	    LoadVertices(inFile, *mesh);
-		LoadTexCoords(inFile, *mesh);
-		LoadNormals(inFile, *mesh);
-		LoadIndices(inFile, *mesh);
+	LoadVertices(inFile, *mesh);
+	LoadTexCoords(inFile, *mesh);
+	LoadNormals(inFile, *mesh);
+	LoadIndices(inFile, *mesh);
 
 	return mesh;
 }

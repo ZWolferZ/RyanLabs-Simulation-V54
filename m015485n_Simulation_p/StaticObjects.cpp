@@ -7,13 +7,12 @@
 #include "GL/freeglut.h"
 
 
-StaticObjects::StaticObjects(Mesh* mesh, float x, float y, float z) : SceneObject(mesh,nullptr,nullptr)
+StaticObjects::StaticObjects(Mesh* mesh, float x, float y, float z) : SceneObject(mesh, nullptr, nullptr)
 {
 	position.x = x;
 	position.y = y;
 	position.z = z;
 }
-
 
 
 StaticObjects::~StaticObjects() = default;

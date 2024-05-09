@@ -1,9 +1,10 @@
 #pragma once
+#ifndef _STRUCTURES_H
+#define STRUCTURES_H
 #include <Windows.h>
 #include <gl/GL.h>
 
 #include "Texture2D.h"
-
 
 
 enum Constants
@@ -12,16 +13,13 @@ enum Constants
 	fogStart = 0,
 	fogEnd = 50,
 	lineWidth = 4,
-	 cubeNumber = 100,
- OBJNumber = 1,
- staticObjectNumber = 100,
+	cubeNumber = 100,
+	OBJNumber = 1,
+	staticObjectNumber = 100,
 
- objectCount = staticObjectNumber + cubeNumber,
- objectLimit = objectCount,
-	
+	objectCount = staticObjectNumber + cubeNumber,
+	objectLimit = objectCount,
 };
-
-
 
 
 struct Color
@@ -47,12 +45,12 @@ struct Vector3
 
 struct Vector4
 {
-		GLfloat x, y, z, w;
+	GLfloat x, y, z, w;
 };
 
 struct Texcoord
 {
-		GLfloat u, v;
+	GLfloat u, v;
 };
 
 struct ListNode
@@ -75,15 +73,13 @@ struct Mesh
 
 struct OBJMesh
 {
-		Vertex* Vertices;
+	Vertex* Vertices;
 	GLushort* Indices;
 	Vector4* Normals;
 	Texcoord* texCoords;
-	
-	GLint vertexCount, indexCount,normalCount, texCoordCount;
+
+	GLint vertexCount, indexCount, normalCount, texCoordCount;
 };
-
-
 
 
 // Screen Metrics
@@ -107,5 +103,4 @@ constexpr GLfloat lightSpecular[] = {1.0, 1.0, 1.0, 1.0};
 constexpr GLfloat lightPosition[] = {0.0, 0.0, 0.0, 1.0};
 
 
-
-
+#endif // !_STRUCTURES_H

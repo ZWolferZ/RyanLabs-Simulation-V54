@@ -14,14 +14,7 @@ Vertex Cube::indexedVerticesLINE[] =
 	{1, -1, -1}, {1, 1, -1}, // v4-v5
 	{-1, 1, -1}, {-1, -1, -1} // v6-v7
 };
-/*
-Color Cube::indexedColors[] =
-{
-	{1, 1, 1}, {1, 1, 0}, // v0-v1
-	{1, 0, 0}, {1, 0, 1}, // v2-v3
-	{0, 0, 1}, {0, 1, 1}, // v4-v5
-	{0, 1, 0}, {0, 0, 0} // v6-v7
-};*/
+
 GLushort Cube::indicesLINE[] =
 {
 	0, 1, 2, 2, 3, 0, // FRONT FACE
@@ -33,17 +26,7 @@ GLushort Cube::indicesLINE[] =
 };
 
 
-//Vertex* Cube::indexedVertices = nullptr;
-//Color* Cube::indexedColors = nullptr;
-//GLushort* Cube::indices = nullptr;
-
-//int Cube::numVertices = 0;
-//int Cube::numColors = 0;
-//int Cube::numIndices = 0;
-
-
-
-Cube::Cube(Mesh* mesh, Texture2D* texture,float x, float y, float z) : SceneObject(mesh,nullptr,texture)
+Cube::Cube(Mesh* mesh, Texture2D* texture, float x, float y, float z) : SceneObject(mesh, nullptr, texture)
 {
 	position.x = x;
 	position.y = y;
@@ -61,7 +44,7 @@ void Cube::DrawCubes() const
 	{
 		glBindTexture(GL_TEXTURE_2D, _texture->GetID());
 		glEnableClientState(GL_TEXTURE_COORD_ARRAY);
-		
+
 
 		glVertexPointer(3, GL_FLOAT, 0, _mesh->Vertices);
 		glColorPointer(3, GL_FLOAT, 0, _mesh->Colors);
@@ -99,28 +82,20 @@ void Cube::DrawWire() const
 }
 
 
-
-
 void Cube::Update()
 {
-	
-    rotation += 0.5f;
+	rotation += 0.5f;
 
-    if (rotation > 360.0f)
-    {
-        rotation = 0.0f;
-    }
-
-   
+	if (rotation > 360.0f)
+	{
+		rotation = 0.0f;
+	}
 
 
+	position.z += velocity;
 
-
-    position.z += velocity;
-
-    if (position.z >= 1)
-    {
-        position.z = -80;
-    }
-	
+	if (position.z >= 1)
+	{
+		position.z = -80;
+	}
 }

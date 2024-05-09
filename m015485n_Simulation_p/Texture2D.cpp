@@ -3,7 +3,7 @@
 #include <gl/GLU.h>
 #include "GL/freeglut.h"
 #include "GLUTCallbacks.h""
-#include "HelloGL.h"
+#include "OpenGL.h"
 #include <iostream>
 
 #include "Texture2D.h"
@@ -14,12 +14,15 @@ using namespace std;
 
 Texture2D::Texture2D()
 {
+	_width = 0;
+	_height = 0;
+	ID = 0;
 }
 
 
 Texture2D::~Texture2D()
 {
-	glDeleteTextures(1, &_ID);
+	glDeleteTextures(1, &ID);
 }
 
 bool Texture2D::Load(char* path, int width, int height)
@@ -45,9 +48,9 @@ bool Texture2D::Load(char* path, int width, int height)
 
 	std::cout << "Loaded: " << path << std::endl;
 
-	glGenTextures(1, &_ID);
-	glBindTexture(GL_TEXTURE_2D, _ID);
-    gluBuild2DMipmaps(GL_TEXTURE_2D, 3, width, height, GL_RGB, GL_UNSIGNED_BYTE, tempTextureData);
+	glGenTextures(1, &ID);
+	glBindTexture(GL_TEXTURE_2D, ID);
+	gluBuild2DMipmaps(GL_TEXTURE_2D, 3, width, height, GL_RGB, GL_UNSIGNED_BYTE, tempTextureData);
 	delete [] tempTextureData;
 	return true;
 }
