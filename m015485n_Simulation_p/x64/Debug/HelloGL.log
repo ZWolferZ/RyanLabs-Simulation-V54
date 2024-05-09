@@ -1,0 +1,40 @@
+﻿  GLUTCallbacks.cpp
+C:\Users\m015485n\Documents\GitHub\HelloGL\HelloGL\GLUTCallbacks.cpp(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\m015485n\Documents\GitHub\HelloGL\HelloGL\HelloGL.h(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  HelloGL.cpp
+C:\Users\m015485n\Documents\GitHub\HelloGL\HelloGL\HelloGL.h(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\m015485n\Documents\GitHub\HelloGL\HelloGL\HelloGL.cpp(10,41): warning C4244: 'initializing': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\m015485n\Documents\GitHub\HelloGL\HelloGL\HelloGL.cpp(10,27): warning C4244: 'initializing': conversion from 'int' to 'const GLfloat', possible loss of data
+C:\Users\m015485n\Documents\GitHub\HelloGL\HelloGL\HelloGL.cpp(19,35): warning C4305: 'initializing': truncation from 'double' to 'const GLfloat'
+C:\Users\m015485n\Documents\GitHub\HelloGL\HelloGL\HelloGL.cpp(19,40): warning C4305: 'initializing': truncation from 'double' to 'const GLfloat'
+C:\Users\m015485n\Documents\GitHub\HelloGL\HelloGL\HelloGL.cpp(19,45): warning C4305: 'initializing': truncation from 'double' to 'const GLfloat'
+C:\Users\m015485n\Documents\GitHub\HelloGL\HelloGL\HelloGL.cpp(20,35): warning C4305: 'initializing': truncation from 'double' to 'const GLfloat'
+C:\Users\m015485n\Documents\GitHub\HelloGL\HelloGL\HelloGL.cpp(20,40): warning C4305: 'initializing': truncation from 'double' to 'const GLfloat'
+C:\Users\m015485n\Documents\GitHub\HelloGL\HelloGL\HelloGL.cpp(20,45): warning C4305: 'initializing': truncation from 'double' to 'const GLfloat'
+C:\Users\m015485n\Documents\GitHub\HelloGL\HelloGL\HelloGL.cpp(164,37): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\m015485n\Documents\GitHub\HelloGL\HelloGL\HelloGL.cpp(165,36): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\m015485n\Documents\GitHub\HelloGL\HelloGL\HelloGL.cpp(166,39): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+  main.cpp
+C:\Users\m015485n\Documents\GitHub\HelloGL\HelloGL\HelloGL.h(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  Generating Code...
+GLUTCallbacks.obj : error LNK2019: unresolved external symbol __imp_glutFullScreen referenced in function "void __cdecl GLUTCallbacks::KeyboardWASD(unsigned char,int,int)" (?KeyboardWASD@GLUTCallbacks@@YAXEHH@Z)
+HelloGL.obj : error LNK2001: unresolved external symbol __imp_glutFullScreen
+GLUTCallbacks.obj : error LNK2019: unresolved external symbol __imp_glutPostRedisplay referenced in function "void __cdecl GLUTCallbacks::KeyboardROTATION(int,int,int)" (?KeyboardROTATION@GLUTCallbacks@@YAXHHH@Z)
+HelloGL.obj : error LNK2001: unresolved external symbol __imp_glutPostRedisplay
+GLUTCallbacks.obj : error LNK2019: unresolved external symbol __imp_glutTimerFunc referenced in function "void __cdecl GLUTCallbacks::Timer(int)" (?Timer@GLUTCallbacks@@YAXH@Z)
+HelloGL.obj : error LNK2001: unresolved external symbol __imp_glutTimerFunc
+GLUTCallbacks.obj : error LNK2019: unresolved external symbol __imp_glutGet referenced in function "void __cdecl GLUTCallbacks::Timer(int)" (?Timer@GLUTCallbacks@@YAXH@Z)
+GLUTCallbacks.obj : error LNK2019: unresolved external symbol __imp_glutWireCube referenced in function "void __cdecl GLUTCallbacks::MoveCubes(void)" (?MoveCubes@GLUTCallbacks@@YAXXZ)
+GLUTCallbacks.obj : error LNK2019: unresolved external symbol __imp_glutLeaveMainLoop referenced in function "void __cdecl GLUTCallbacks::KeyboardWASD(unsigned char,int,int)" (?KeyboardWASD@GLUTCallbacks@@YAXEHH@Z)
+GLUTCallbacks.obj : error LNK2019: unresolved external symbol __imp_glutLeaveFullScreen referenced in function "void __cdecl GLUTCallbacks::KeyboardWASD(unsigned char,int,int)" (?KeyboardWASD@GLUTCallbacks@@YAXEHH@Z)
+HelloGL.obj : error LNK2019: unresolved external symbol __imp_glutInitWindowSize referenced in function "public: __cdecl HelloGL::HelloGL(int,char * * const)" (??0HelloGL@@QEAA@HQEAPEAD@Z)
+HelloGL.obj : error LNK2019: unresolved external symbol __imp_glutInitDisplayMode referenced in function "public: __cdecl HelloGL::HelloGL(int,char * * const)" (??0HelloGL@@QEAA@HQEAPEAD@Z)
+HelloGL.obj : error LNK2019: unresolved external symbol __imp_glutMainLoop referenced in function "public: __cdecl HelloGL::HelloGL(int,char * * const)" (??0HelloGL@@QEAA@HQEAPEAD@Z)
+HelloGL.obj : error LNK2019: unresolved external symbol __imp_glutSwapBuffers referenced in function "public: static void __cdecl HelloGL::Display(void)" (?Display@HelloGL@@SAXXZ)
+HelloGL.obj : error LNK2019: unresolved external symbol __imp_glutKeyboardFunc referenced in function "public: __cdecl HelloGL::HelloGL(int,char * * const)" (??0HelloGL@@QEAA@HQEAPEAD@Z)
+HelloGL.obj : error LNK2019: unresolved external symbol __imp_glutSpecialFunc referenced in function "public: __cdecl HelloGL::HelloGL(int,char * * const)" (??0HelloGL@@QEAA@HQEAPEAD@Z)
+HelloGL.obj : error LNK2019: unresolved external symbol __imp_glutDisplayFunc referenced in function "public: __cdecl HelloGL::HelloGL(int,char * * const)" (??0HelloGL@@QEAA@HQEAPEAD@Z)
+HelloGL.obj : error LNK2019: unresolved external symbol __imp___glutInitWithExit referenced in function glutInit_ATEXIT_HACK
+HelloGL.obj : error LNK2019: unresolved external symbol __imp___glutCreateWindowWithExit referenced in function glutCreateWindow_ATEXIT_HACK
+freeglut.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\m015485n\Documents\GitHub\HelloGL\x64\Debug\HelloGL.exe : fatal error LNK1120: 16 unresolved externals

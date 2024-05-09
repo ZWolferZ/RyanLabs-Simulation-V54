@@ -1,0 +1,33 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (HelloGL.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+GLUTCallbacks.obj : error LNK2019: unresolved external symbol __imp_glutTimerFunc referenced in function "void __cdecl GLUTCallbacks::Timer(int)" (?Timer@GLUTCallbacks@@YAXH@Z)
+HelloGL.obj : error LNK2001: unresolved external symbol __imp_glutTimerFunc
+GLUTCallbacks.obj : error LNK2019: unresolved external symbol __imp_glutGet referenced in function "void __cdecl GLUTCallbacks::Timer(int)" (?Timer@GLUTCallbacks@@YAXH@Z)
+GLUTCallbacks.obj : error LNK2019: unresolved external symbol __imp_glutLeaveMainLoop referenced in function "void __cdecl GLUTCallbacks::Display(void)" (?Display@GLUTCallbacks@@YAXXZ)
+HelloGL.obj : error LNK2001: unresolved external symbol __imp_glutLeaveMainLoop
+HelloGL.obj : error LNK2019: unresolved external symbol __imp_glutInitWindowSize referenced in function "public: void __cdecl HelloGL::InitGL(int,char * * const)" (?InitGL@HelloGL@@QEAAXHQEAPEAD@Z)
+HelloGL.obj : error LNK2019: unresolved external symbol __imp_glutInitDisplayMode referenced in function "public: void __cdecl HelloGL::InitGL(int,char * * const)" (?InitGL@HelloGL@@QEAAXHQEAPEAD@Z)
+HelloGL.obj : error LNK2019: unresolved external symbol __imp_glutMainLoop referenced in function "public: __cdecl HelloGL::HelloGL(int,char * * const)" (??0HelloGL@@QEAA@HQEAPEAD@Z)
+HelloGL.obj : error LNK2019: unresolved external symbol __imp_glutFullScreen referenced in function "public: void __cdecl HelloGL::InitGL(int,char * * const)" (?InitGL@HelloGL@@QEAAXHQEAPEAD@Z)
+HelloGL.obj : error LNK2019: unresolved external symbol __imp_glutPostRedisplay referenced in function "public: void __cdecl HelloGL::updateRefreshrate(void)" (?updateRefreshrate@HelloGL@@QEAAXXZ)
+HelloGL.obj : error LNK2019: unresolved external symbol __imp_glutSwapBuffers referenced in function "public: void __cdecl HelloGL::Display(void)const " (?Display@HelloGL@@QEBAXXZ)
+HelloGL.obj : error LNK2019: unresolved external symbol __imp_glutWarpPointer referenced in function "public: static void __cdecl HelloGL::mouseRotation(int,int)" (?mouseRotation@HelloGL@@SAXHH@Z)
+HelloGL.obj : error LNK2019: unresolved external symbol __imp_glutSetCursor referenced in function "public: void __cdecl HelloGL::keyboardControls(unsigned char,int,int)" (?keyboardControls@HelloGL@@QEAAXEHH@Z)
+HelloGL.obj : error LNK2019: unresolved external symbol __imp_glutKeyboardFunc referenced in function "public: void __cdecl HelloGL::InitGL(int,char * * const)" (?InitGL@HelloGL@@QEAAXHQEAPEAD@Z)
+HelloGL.obj : error LNK2019: unresolved external symbol __imp_glutSpecialFunc referenced in function "public: void __cdecl HelloGL::InitGL(int,char * * const)" (?InitGL@HelloGL@@QEAAXHQEAPEAD@Z)
+HelloGL.obj : error LNK2019: unresolved external symbol __imp_glutDisplayFunc referenced in function "public: void __cdecl HelloGL::InitGL(int,char * * const)" (?InitGL@HelloGL@@QEAAXHQEAPEAD@Z)
+HelloGL.obj : error LNK2019: unresolved external symbol __imp_glutPassiveMotionFunc referenced in function "public: void __cdecl HelloGL::InitGL(int,char * * const)" (?InitGL@HelloGL@@QEAAXHQEAPEAD@Z)
+HelloGL.obj : error LNK2019: unresolved external symbol __imp_glutKeyboardUpFunc referenced in function "public: void __cdecl HelloGL::InitGL(int,char * * const)" (?InitGL@HelloGL@@QEAAXHQEAPEAD@Z)
+HelloGL.obj : error LNK2019: unresolved external symbol __imp_glutSpecialUpFunc referenced in function "public: void __cdecl HelloGL::InitGL(int,char * * const)" (?InitGL@HelloGL@@QEAAXHQEAPEAD@Z)
+HelloGL.obj : error LNK2019: unresolved external symbol __imp_glutBitmapCharacter referenced in function "public: static void __cdecl HelloGL::DrawString(char const *,struct Color *,float,float)" (?DrawString@HelloGL@@SAXPEBDPEAUColor@@MM@Z)
+HelloGL.obj : error LNK2019: unresolved external symbol __imp_glutWireSphere referenced in function "public: void __cdecl HelloGL::Display(void)const " (?Display@HelloGL@@QEBAXXZ)
+HelloGL.obj : error LNK2019: unresolved external symbol __imp_glutWireDodecahedron referenced in function "public: void __cdecl HelloGL::Display(void)const " (?Display@HelloGL@@QEBAXXZ)
+HelloGL.obj : error LNK2019: unresolved external symbol __imp_glutWireOctahedron referenced in function "public: void __cdecl HelloGL::Display(void)const " (?Display@HelloGL@@QEBAXXZ)
+HelloGL.obj : error LNK2019: unresolved external symbol __imp_glutWireTetrahedron referenced in function "public: void __cdecl HelloGL::Display(void)const " (?Display@HelloGL@@QEBAXXZ)
+HelloGL.obj : error LNK2019: unresolved external symbol __imp_glutWireIcosahedron referenced in function "public: void __cdecl HelloGL::Display(void)const " (?Display@HelloGL@@QEBAXXZ)
+HelloGL.obj : error LNK2019: unresolved external symbol __imp_glutWireTeapot referenced in function "public: void __cdecl HelloGL::Display(void)const " (?Display@HelloGL@@QEBAXXZ)
+HelloGL.obj : error LNK2019: unresolved external symbol __imp___glutInitWithExit referenced in function glutInit_ATEXIT_HACK
+HelloGL.obj : error LNK2019: unresolved external symbol __imp___glutCreateWindowWithExit referenced in function glutCreateWindow_ATEXIT_HACK
+HelloGL.obj : error LNK2019: unresolved external symbol __imp_glutLeaveFullScreen referenced in function "public: void __cdecl HelloGL::keyboardControls(unsigned char,int,int)" (?keyboardControls@HelloGL@@QEAAXEHH@Z)
+HelloGL.obj : error LNK2019: unresolved external symbol __imp_glutMouseWheelFunc referenced in function "public: void __cdecl HelloGL::InitGL(int,char * * const)" (?InitGL@HelloGL@@QEAAXHQEAPEAD@Z)
+freeglut.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\Ryan Moakes\Downloads\m015485n_Simulation_p\x64\Debug\m015485n_Simulation_p.exe : fatal error LNK1120: 28 unresolved externals

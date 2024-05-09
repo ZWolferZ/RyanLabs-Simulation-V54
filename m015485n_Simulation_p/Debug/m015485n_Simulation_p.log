@@ -1,0 +1,71 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (HelloGL.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Cube.cpp
+C:\Users\Ryan Moakes\Downloads\m015485n_Simulation_p\m015485n_Simulation_p\Texture2D.h(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'Cube.cpp')
+  
+  GLUTCallbacks.cpp
+C:\Users\Ryan Moakes\Downloads\m015485n_Simulation_p\m015485n_Simulation_p\Texture2D.h(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'GLUTCallbacks.cpp')
+  
+C:\Users\Ryan Moakes\Downloads\m015485n_Simulation_p\m015485n_Simulation_p\HelloGL.h(8,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'GLUTCallbacks.cpp')
+  
+  HelloGL.cpp
+C:\Users\Ryan Moakes\Downloads\m015485n_Simulation_p\m015485n_Simulation_p\Texture2D.h(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'HelloGL.cpp')
+  
+C:\Users\Ryan Moakes\Downloads\m015485n_Simulation_p\m015485n_Simulation_p\HelloGL.h(8,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'HelloGL.cpp')
+  
+C:\Users\Ryan Moakes\Downloads\m015485n_Simulation_p\m015485n_Simulation_p\HelloGL.cpp(36,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Ryan Moakes\Downloads\m015485n_Simulation_p\m015485n_Simulation_p\HelloGL.cpp(89,20): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Ryan Moakes\Downloads\m015485n_Simulation_p\m015485n_Simulation_p\HelloGL.cpp(89,12): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Ryan Moakes\Downloads\m015485n_Simulation_p\m015485n_Simulation_p\HelloGL.cpp(96,20): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Ryan Moakes\Downloads\m015485n_Simulation_p\m015485n_Simulation_p\HelloGL.cpp(96,12): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Ryan Moakes\Downloads\m015485n_Simulation_p\m015485n_Simulation_p\HelloGL.cpp(103,22): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Ryan Moakes\Downloads\m015485n_Simulation_p\m015485n_Simulation_p\HelloGL.cpp(103,12): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Ryan Moakes\Downloads\m015485n_Simulation_p\m015485n_Simulation_p\HelloGL.cpp(111,22): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Ryan Moakes\Downloads\m015485n_Simulation_p\m015485n_Simulation_p\HelloGL.cpp(111,12): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+  LinkedLists.cpp
+C:\Users\Ryan Moakes\Downloads\m015485n_Simulation_p\m015485n_Simulation_p\Texture2D.h(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'LinkedLists.cpp')
+  
+  main.cpp
+C:\Users\Ryan Moakes\Downloads\m015485n_Simulation_p\m015485n_Simulation_p\Texture2D.h(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'main.cpp')
+  
+C:\Users\Ryan Moakes\Downloads\m015485n_Simulation_p\m015485n_Simulation_p\HelloGL.h(8,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'main.cpp')
+  
+  MeshLoader.cpp
+C:\Users\Ryan Moakes\Downloads\m015485n_Simulation_p\m015485n_Simulation_p\Texture2D.h(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'MeshLoader.cpp')
+  
+  OBJLoader.cpp
+C:\Users\Ryan Moakes\Downloads\m015485n_Simulation_p\m015485n_Simulation_p\Texture2D.h(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'OBJLoader.cpp')
+  
+  OBJObjects.cpp
+C:\Users\Ryan Moakes\Downloads\m015485n_Simulation_p\m015485n_Simulation_p\Texture2D.h(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'OBJObjects.cpp')
+  
+  SceneObject.cpp
+C:\Users\Ryan Moakes\Downloads\m015485n_Simulation_p\m015485n_Simulation_p\Texture2D.h(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'SceneObject.cpp')
+  
+  StaticObjects.cpp
+C:\Users\Ryan Moakes\Downloads\m015485n_Simulation_p\m015485n_Simulation_p\Texture2D.h(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'StaticObjects.cpp')
+  
+  Texture2D.cpp
+C:\Users\Ryan Moakes\Downloads\m015485n_Simulation_p\m015485n_Simulation_p\Texture2D.cpp(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\Ryan Moakes\Downloads\m015485n_Simulation_p\m015485n_Simulation_p\Texture2D.h(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'Texture2D.cpp')
+  
+C:\Users\Ryan Moakes\Downloads\m015485n_Simulation_p\m015485n_Simulation_p\HelloGL.h(8,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'Texture2D.cpp')
+  
+C:\Users\Ryan Moakes\Downloads\m015485n_Simulation_p\m015485n_Simulation_p\Texture2D.cpp(40,35): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
+C:\Users\Ryan Moakes\Downloads\m015485n_Simulation_p\m015485n_Simulation_p\Texture2D.cpp(40,21): warning C4244: 'initializing': conversion from 'std::streamoff' to 'const int', possible loss of data
+  Generating Code...
+  m015485n_Simulation_p.vcxproj -> C:\Users\Ryan Moakes\Downloads\m015485n_Simulation_p\Debug\m015485n_Simulation_p.exe
