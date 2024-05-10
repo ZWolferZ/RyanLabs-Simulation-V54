@@ -1,5 +1,7 @@
 #include "OBJLoader.h"
 
+//Non-functional Loader (Points for trying?)
+
 void LoadVertices(std::ifstream& inFile, OBJMesh& mesh);
 
 void LoadTexCoords(std::ifstream& inFile, OBJMesh& mesh);

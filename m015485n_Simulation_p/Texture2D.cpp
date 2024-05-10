@@ -10,7 +10,6 @@
 
 #include <fstream>
 
-using namespace std;
 
 Texture2D::Texture2D()
 {
@@ -27,6 +26,9 @@ Texture2D::~Texture2D()
 
 bool Texture2D::Load(char* path, int width, int height)
 {
+	// Switched from Namespace std to only what is needed, which saves time and memory
+	using std::ios;
+
 	std::ifstream inFile;
 	_width = width;
 	_height = height;

@@ -8,25 +8,25 @@ namespace GLUTCallbacks
 {
 	namespace
 	{
-		OpenGL* helloGL = nullptr;
+		OpenGL* GL_Class = nullptr;
 	}
 
 	void Init(OpenGL* gl)
 	{
-		helloGL = gl;
+		GL_Class = gl;
 	}
 
 	void Destroy()
 	{
-		helloGL = nullptr;
-		delete helloGL;
+		GL_Class = nullptr;
+		delete GL_Class;
 	}
 
 	void Display(void)
 	{
-		if (helloGL != nullptr)
+		if (GL_Class != nullptr)
 		{
-			helloGL->Display();
+			GL_Class->Display();
 		}
 		else
 		{
@@ -37,9 +37,9 @@ namespace GLUTCallbacks
 
 	void keyboardControls(const unsigned char key, int x, int y)
 	{
-		if (helloGL != nullptr)
+		if (GL_Class != nullptr)
 		{
-			helloGL->keyboardControls(key, x, y);
+			GL_Class->keyboardControls(key, x, y);
 		}
 		else
 		{
@@ -49,9 +49,9 @@ namespace GLUTCallbacks
 
 	void keyboardSpecial(int key, int x, int y)
 	{
-		if (helloGL != nullptr)
+		if (GL_Class != nullptr)
 		{
-			helloGL->keyboardSpecial(key, x, y);
+			GL_Class->keyboardSpecial(key, x, y);
 		}
 		else
 		{
@@ -61,9 +61,9 @@ namespace GLUTCallbacks
 
 	void keyboardSpecialUp(int key, int x, int y)
 	{
-		if (helloGL != nullptr)
+		if (GL_Class != nullptr)
 		{
-			helloGL->keyboardSpecialUp(key, x, y);
+			GL_Class->keyboardSpecialUp(key, x, y);
 		}
 		else
 		{
@@ -73,9 +73,9 @@ namespace GLUTCallbacks
 
 	void updateCamera()
 	{
-		if (helloGL != nullptr)
+		if (GL_Class != nullptr)
 		{
-			helloGL->updateCamera();
+			GL_Class->updateCamera();
 		}
 		else
 		{
@@ -85,9 +85,9 @@ namespace GLUTCallbacks
 
 	void mouseRotation(int x, int y)
 	{
-		if (helloGL != nullptr)
+		if (GL_Class != nullptr)
 		{
-			helloGL->mouseRotation(x, y);
+			GL_Class->mouseRotation(x, y);
 		}
 		else
 		{
@@ -97,9 +97,9 @@ namespace GLUTCallbacks
 
 	void mouseWheel(int wheel, int direction, int x, int y)
 	{
-		if (helloGL != nullptr)
+		if (GL_Class != nullptr)
 		{
-			helloGL->mouseWheel(wheel, direction, x, y);
+			GL_Class->mouseWheel(wheel, direction, x, y);
 		}
 		else
 		{
@@ -109,9 +109,9 @@ namespace GLUTCallbacks
 
 	void keyboardControlsUp(unsigned char key, int x, int y)
 	{
-		if (helloGL != nullptr)
+		if (GL_Class != nullptr)
 		{
-			helloGL->keyboardControlsUp(key, x, y);
+			GL_Class->keyboardControlsUp(key, x, y);
 		}
 		else
 		{
@@ -122,10 +122,10 @@ namespace GLUTCallbacks
 
 	void Timer(const int preferredRefresh)
 	{
-		if (helloGL != nullptr)
+		if (GL_Class != nullptr)
 		{
 			int updateTime = glutGet(GLUT_ELAPSED_TIME);
-			helloGL->updateRefreshrate();
+			GL_Class->updateRefreshrate();
 			updateTime = glutGet(GLUT_ELAPSED_TIME) - updateTime;
 			glutTimerFunc(preferredRefresh - updateTime, Timer, preferredRefresh);
 		}

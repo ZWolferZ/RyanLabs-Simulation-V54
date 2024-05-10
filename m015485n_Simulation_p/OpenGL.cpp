@@ -26,8 +26,7 @@ bool toggle = false;
 bool mouseToggle = false;
 GLfloat rotation = 0.0f;
 
-auto* lists = new LinkedLists();
-
+std::unique_ptr<LinkedLists> lists(new LinkedLists());
 
 Color c = {0.0f, 1.0f, 0.0f};
 
@@ -525,7 +524,9 @@ void OpenGL::InitObjects()
 	if (toggle == false)
 	{
 		auto* cubeMesh = MeshLoader::texLoad(const_cast<char*>("Objects/cube.txt"));
+
 		auto* texture = new Texture2D();
+
 		texture->Load(const_cast<char*>("Textures/stars.raw"), 512, 512);
 
 		for (int i = 0; i < cubeNumber; i++)

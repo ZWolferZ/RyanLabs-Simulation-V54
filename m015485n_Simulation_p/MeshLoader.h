@@ -7,8 +7,8 @@
 
 namespace MeshLoader
 {
-	Mesh* texLoad(char* path);
-	Mesh* noTexLoad(char* path);
+	Mesh* texLoad(const char* path);
+	Mesh* noTexLoad(const char* path);
 };
 
 #endif // _MESHLOADER_H

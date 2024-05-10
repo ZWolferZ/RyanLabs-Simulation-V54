@@ -8,6 +8,8 @@
 #include <iostream>
 #include <fstream>
 
+//Non-functional Loader (Points for trying?)
+
 namespace OBJLoader
 {
 	OBJMesh* LoadOBJ(const char* path);

@@ -1,10 +1,12 @@
 #include "MeshLoader.h"
 
 
-using namespace std;
 
 namespace MeshLoader
 {
+	//Switched from using namespace std to only what is needed
+using std::ifstream, std::cerr,std::endl;
+
 	void LoadVertices(ifstream& inFile, Mesh& mesh);
 	void LoadColours(ifstream& inFile, Mesh& mesh);
 	void LoadTexCoords(ifstream& inFile, Mesh& mesh);
@@ -73,7 +75,7 @@ namespace MeshLoader
 	}
 
 
-	Mesh* MeshLoader::texLoad(char* path)
+	Mesh* MeshLoader::texLoad(const char* path)
 	{
 		auto mesh = new Mesh();
 
@@ -96,7 +98,7 @@ namespace MeshLoader
 		return mesh;
 	}
 
-	Mesh* MeshLoader::noTexLoad(char* path)
+	Mesh* MeshLoader::noTexLoad(const char* path)
 	{
 		auto mesh = new Mesh();
 

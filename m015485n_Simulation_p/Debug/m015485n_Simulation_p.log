@@ -1,4 +1,15 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (HelloGL.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Cube.cpp
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\Texture2D.h(8,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'Cube.cpp')
+  
+  GLUTCallbacks.cpp
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\Texture2D.h(8,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'GLUTCallbacks.cpp')
+  
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.h(10,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'GLUTCallbacks.cpp')
+  
   OpenGL.cpp
 C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\Texture2D.h(8,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   (compiling source file 'OpenGL.cpp')
@@ -6,13 +17,55 @@ C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_
 C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.h(10,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   (compiling source file 'OpenGL.cpp')
   
-C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(36,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(91,20): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(91,12): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(98,20): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(98,12): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(105,22): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(105,12): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(113,22): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(113,12): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(35,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(90,20): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(90,12): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(97,20): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(97,12): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(104,22): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(104,12): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(112,22): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(112,12): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+  LinkedLists.cpp
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\Texture2D.h(8,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'LinkedLists.cpp')
+  
+  main.cpp
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\Texture2D.h(8,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'main.cpp')
+  
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.h(10,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'main.cpp')
+  
+  MeshLoader.cpp
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\Texture2D.h(8,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'MeshLoader.cpp')
+  
+  OBJLoader.cpp
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\Texture2D.h(8,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'OBJLoader.cpp')
+  
+  OBJObjects.cpp
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\Texture2D.h(8,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'OBJObjects.cpp')
+  
+  SceneObject.cpp
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\Texture2D.h(8,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'SceneObject.cpp')
+  
+  StaticObjects.cpp
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\Texture2D.h(8,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'StaticObjects.cpp')
+  
+  Texture2D.cpp
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\Texture2D.cpp(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\Texture2D.h(8,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'Texture2D.cpp')
+  
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.h(10,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'Texture2D.cpp')
+  
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\Texture2D.cpp(45,35): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\Texture2D.cpp(45,21): warning C4244: 'initializing': conversion from 'std::streamoff' to 'const int', possible loss of data
+  Generating Code...
   m015485n_Simulation_p.vcxproj -> C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\Debug\m015485n_Simulation_p.exe
