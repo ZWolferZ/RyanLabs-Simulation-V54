@@ -1,16 +1,4 @@
 #include "OpenGL.h"
-#include <cmath>
-#include <iostream>
-
-#include "SceneObject.h"
-#include "StaticObjects.h"
-#include "Cube.h"
-
-#include "OBJObjects.h"
-
-#include "MeshLoader.h"
-#include "OBJLoader.h"
-#include "LinkedLists.h"
 
 GLfloat cameraX = 0.75f;
 GLfloat cameraY = 0.0f;
@@ -32,7 +20,10 @@ Color c = {0.0f, 1.0f, 0.0f};
 
 OpenGL::OpenGL(int argc, char* argv[])
 {
-	srand(time(nullptr));
+	// Get a random seed by using the current time and the thread id
+	const auto seed = std::chrono::high_resolution_clock::now().time_since_epoch().count() +
+                std::hash<std::thread::id>{}(std::this_thread::get_id());
+    srand(seed);
 	InitGL(argc, argv);
 	InitObjects();
 	glutMainLoop();

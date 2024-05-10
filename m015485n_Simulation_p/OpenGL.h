@@ -2,13 +2,22 @@
 #ifndef _OPENGL_H
 #define OPENGL_H
 #include <Windows.h>
+#include <chrono>
+#include <thread>
+#include <cmath>
+#include <iostream>
 #include <gl/GL.h>
 #include <gl/GLU.h>
-
-#include "Cube.h"
 #include "GL/freeglut.h"
 #include "GLUTCallbacks.h"
 #include "Structures.h"
+#include "SceneObject.h"
+#include "StaticObjects.h"
+#include "Cube.h"
+#include "OBJObjects.h"
+#include "MeshLoader.h"
+#include "OBJLoader.h"
+#include "LinkedLists.h"
 
 
 class OpenGL
