@@ -5,7 +5,7 @@
 #include <gl/GL.h>
 #include <gl/GLU.h>
 #include "GL/freeglut.h"
-#include "GLUTCallbacks.h""
+#include "GLUTCallbacks.h"
 
 #include "Structures.h"
 
@@ -16,7 +16,7 @@ public:
 
 	~Texture2D();
 
-	bool Load(char* path, int width, int height);
+	bool Load(const char* path, int width, int height);
 
 	GLuint GetID() const { return ID; }
 	int GetWidth() const { return _width; }

@@ -24,7 +24,7 @@ Texture2D::~Texture2D()
 	glDeleteTextures(1, &ID);
 }
 
-bool Texture2D::Load(char* path, int width, int height)
+bool Texture2D::Load(const char* path, int width, int height)
 {
 	// Switched from Namespace std to only what is needed, which saves time and memory
 	using std::ios;
@@ -37,7 +37,7 @@ bool Texture2D::Load(char* path, int width, int height)
 
 	if (!inFile.good())
 	{
-		std::cerr << "Can't open texture file: " << path << std::endl;
+		std::cerr << "Can't open texture file: " << path << '\n';
 		return false;
 	}
 
@@ -48,7 +48,7 @@ bool Texture2D::Load(char* path, int width, int height)
 	inFile.read(tempTextureData, fileSize);
 	inFile.close();
 
-	std::cout << "Loaded: " << path << std::endl;
+	std::cout << "Loaded: " << path << '\n';
 
 	glGenTextures(1, &ID);
 	glBindTexture(GL_TEXTURE_2D, ID);

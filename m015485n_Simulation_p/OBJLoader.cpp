@@ -82,7 +82,7 @@ OBJMesh* OBJLoader::LoadOBJ(const char* path)
 
 	if (!inFile.good())
 	{
-		std::cerr << "Can't open OBJ file " << path << std::endl;
+		std::cerr << "Can't open OBJ file " << path << '\n';
 		delete mesh;
 		return nullptr;
 	}

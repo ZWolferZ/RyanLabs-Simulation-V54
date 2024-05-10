@@ -99,13 +99,13 @@ ListNode* LinkedLists::Find(int val) const
 	{
 		if (val == current->data)
 		{
-			std::cout << current << " has a value of " << current->data << std::endl;
+			std::cout << current << " has a value of " << current->data << '\n';
 			return current;
 		}
 		current = current->next;
 	}
 
-	std::cout << "No Node has the value specified..." << std::endl;
+	std::cout << "No Node has the value specified..." << '\n';
 	return nullptr;
 }
 
@@ -121,9 +121,9 @@ void LinkedLists::PrintList() const
 
 	if (current == nullptr)
 	{
-		std::cout << "|NULL|" << std::endl;
+		std::cout << "|NULL|" << '\n';
 	}
-	std::cout << std::endl;
+	std::cout << '\n';
 }
 
 void LinkedLists::PrintListBackwards(ListNode* node)

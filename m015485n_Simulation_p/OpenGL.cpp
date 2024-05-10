@@ -85,45 +85,45 @@ void OpenGL::Display() const
 	// TOTALLY OBJ OBJECTS, JUST DON'T LOOK TO HARD
 
 	glPushMatrix();
-	glTranslatef(8, 0, -3);
-	glRotatef(rotation, 0, 1, 0);
-	glColor3f(0.6, 1, 0.1);
+	glTranslatef(8.0f, 0.0f, -3.0f);
+	glRotatef(rotation, 0.0f, 1.0f, 0.0f);
+	glColor3f(0.6f, 1.0f, 0.1f);
 	glutWireTeapot(1);
 	glPopMatrix();
 
 	glPushMatrix();
-	glTranslatef(5, 0, -3);
-	glRotatef(rotation, 1, 1, 0);
-	glColor3f(0.6, 1, 0.1);
-	glutWireSphere(1, 10, 10);
+	glTranslatef(5.0f, 0.0f, -3.0f);
+	glRotatef(rotation, 1.0f, 1.0f, 0.0f);
+	glColor3f(0.6f, 1.0f, 0.1f);
+	glutWireSphere(1.0f, 10, 10);
 	glPopMatrix();
 
 	glPushMatrix();
-	glTranslatef(2, 0, -3);
-	glRotatef(rotation, 1, 1, 0);
-	glColor3f(0.9, 0.5, 0.1);
+	glTranslatef(2.0f, 0.0f, -3.0f);
+	glRotatef(rotation, 1.0f, 1.0f, 0.0f);
+	glColor3f(0.9f, 0.5f, 0.1f);
 	glutWireIcosahedron();
 	glPopMatrix();
 
 	glPushMatrix();
-	glTranslatef(-1, 0, -3);
-	glRotatef(rotation, 1, 1, 0);
-	glRotatef(60, 0, 0, 0);
-	glColor3f(0.9, 0.5, 0.1);
+	glTranslatef(-1.0f, 0.0f, -3.0f);
+	glRotatef(rotation, 1.0f, 1.0f, 0.0f);
+	glRotatef(60.0f, 0.0f, 0.0f, 0.0f);
+	glColor3f(0.9f, 0.5f, 0.1f);
 	glutWireDodecahedron();
 	glPopMatrix();
 
 	glPushMatrix();
-	glTranslatef(-4, 0, -3);
-	glRotatef(rotation, 1, 1, 0);
-	glColor3f(1, 0, 0);
+	glTranslatef(-4.0f, 0.0f, -3.0f);
+	glRotatef(rotation, 1.0f, 1.0f, 0.0f);
+	glColor3f(1.0f, 0.0f, 0.0f);
 	glutWireOctahedron();
 	glPopMatrix();
 
 	glPushMatrix();
-	glTranslatef(-7, 0, -3);
-	glRotatef(rotation, 1, 1, 0);
-	glColor3f(1, 0, 0);
+	glTranslatef(-7.0f, 0.0f, -3.0f);
+	glRotatef(rotation, 1.0f, 1.0f, 0.0f);
+	glColor3f(1.0f, 0.0f, 0.0f);
 	glutWireTetrahedron();
 	glPopMatrix();
 
@@ -137,14 +137,14 @@ void OpenGL::Display() const
 
 void minimizeConsoleWindow()
 {
-	HWND hWnd = GetConsoleWindow();
-	ShowWindow(hWnd, SW_MINIMIZE);
+	const HWND handle = GetConsoleWindow();
+	ShowWindow(handle, SW_MINIMIZE);
 }
 
 void maximizeConsoleWindow()
 {
-	HWND hWnd = GetConsoleWindow();
-	ShowWindow(hWnd, SW_MAXIMIZE);
+	const HWND handle = GetConsoleWindow();
+	ShowWindow(handle, SW_MAXIMIZE);
 }
 
 void OpenGL::updateRefreshrate()
@@ -152,7 +152,7 @@ void OpenGL::updateRefreshrate()
 	glutPostRedisplay();
 
 
-	for (auto& object : objects)
+	for (const auto& object : objects)
 	{
 		if (object != nullptr)
 		{
@@ -189,7 +189,7 @@ void OpenGL::keyboardControls(const unsigned char key, int x, int y)
 
 	case 'p': // Print camera position
 		case 'P': 
-		std::cout << "Camera Position: (" << cameraX << ", " << cameraY << ", " << cameraZ << ")" << std::endl;
+		std::cout << "Camera Position: (" << cameraX << ", " << cameraY << ", " << cameraZ << ")" << '\n';
 		glutSetCursor(GLUT_CURSOR_LEFT_ARROW);
 		glutLeaveFullScreen();
 		fullScreen = false;
@@ -202,7 +202,7 @@ void OpenGL::keyboardControls(const unsigned char key, int x, int y)
 
 	case 'o': // Print camera rotation
 		case 'O':
-		std::cout << "Camera Rotation: (" << cameraYaw << ", " << cameraPitch << ")" << std::endl;
+		std::cout << "Camera Rotation: (" << cameraYaw << ", " << cameraPitch << ")" << '\n';
 		glutSetCursor(GLUT_CURSOR_LEFT_ARROW);
 		glutLeaveFullScreen();
 		fullScreen = false;
@@ -226,7 +226,7 @@ void OpenGL::keyboardControls(const unsigned char key, int x, int y)
 		fullScreen = true;
 		break;
 	case 27: // 27 = esc key
-		std::cout << "Quiting..." << std::endl;
+		std::cout << "Quiting..." << '\n';
 		glutSetCursor(GLUT_CURSOR_LEFT_ARROW);
 		glutLeaveFullScreen();
 		fullScreen = false;
@@ -276,12 +276,12 @@ void OpenGL::keyboardControls(const unsigned char key, int x, int y)
 		glutLeaveFullScreen();
 		fullScreen = false;
 		maximizeConsoleWindow();
-		std::cout << "Enter the object index you want to delete: " << std::endl;
+		std::cout << "Enter the object index you want to delete: " << '\n';
 
 
 		if (!(std::cin >> temp))
 		{
-			std::cerr << "Invalid input." << std::endl;
+			std::cerr << "Invalid input." << '\n';
 
 			Sleep(2000);
 			minimizeConsoleWindow();
@@ -294,7 +294,7 @@ void OpenGL::keyboardControls(const unsigned char key, int x, int y)
 
 		if (temp < 0 || temp > objectLimit - 1)
 		{
-			std::cerr << "Invalid index. Index must be between 0 and " << count - 1 << std::endl;
+			std::cerr << "Invalid index. Index must be between 0 and " << count - 1 << '\n';
 			Sleep(2000);
 			minimizeConsoleWindow();
 			glutFullScreen();
@@ -309,7 +309,7 @@ void OpenGL::keyboardControls(const unsigned char key, int x, int y)
 			delete objects[temp - 1];
 			objects[temp - 1] = nullptr;
 			count--;
-			std::cout << "Object at index " << temp << " deleted." << std::endl;
+			std::cout << "Object at index " << temp << " deleted." << '\n';
 			Sleep(2000);
 			minimizeConsoleWindow();
 			glutFullScreen();
@@ -317,7 +317,7 @@ void OpenGL::keyboardControls(const unsigned char key, int x, int y)
 		}
 		else
 		{
-			std::cout << "Previous node cannot be null or the last node." << std::endl;
+			std::cout << "Previous node cannot be null or the last node." << '\n';
 			Sleep(2000);
 			minimizeConsoleWindow();
 			glutFullScreen();
@@ -523,11 +523,11 @@ void OpenGL::InitObjects()
 	/// Pretty sure they are already, but it cant hurt.
 	if (toggle == false)
 	{
-		auto* cubeMesh = MeshLoader::texLoad(const_cast<char*>("Objects/cube.txt"));
+		auto* cubeMesh = MeshLoader::texLoad(("Objects/cube.txt"));
 
 		auto* texture = new Texture2D();
 
-		texture->Load(const_cast<char*>("Textures/stars.raw"), 512, 512);
+		texture->Load(("Textures/stars.raw"), 512, 512);
 
 		for (int i = 0; i < cubeNumber; i++)
 		{
@@ -550,7 +550,7 @@ void OpenGL::InitObjects()
 		|                                                                                                                          |
 		//-------------------------------------------------------------------------------------------------------------------------//
 		*/
-		auto* pyramidMesh = MeshLoader::noTexLoad(const_cast<char*>("Objects/pyramid.txt"));
+		auto* pyramidMesh = MeshLoader::noTexLoad(("Objects/pyramid.txt"));
 
 
 		for (int i = cubeNumber; i < objectCount; i++)

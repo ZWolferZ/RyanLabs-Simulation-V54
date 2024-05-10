@@ -5,7 +5,7 @@
 namespace MeshLoader
 {
 	//Switched from using namespace std to only what is needed
-using std::ifstream, std::cerr,std::endl;
+using std::ifstream, std::cerr;
 
 	void LoadVertices(ifstream& inFile, Mesh& mesh);
 	void LoadColours(ifstream& inFile, Mesh& mesh);
@@ -28,7 +28,7 @@ using std::ifstream, std::cerr,std::endl;
 			}
 		}
 	}
-
+	
 
 	void LoadColours(ifstream& inFile, Mesh& mesh)
 	{
@@ -77,7 +77,7 @@ using std::ifstream, std::cerr,std::endl;
 
 	Mesh* MeshLoader::texLoad(const char* path)
 	{
-		auto mesh = new Mesh();
+		const auto mesh = new Mesh();
 
 		ifstream inFile;
 
@@ -85,7 +85,7 @@ using std::ifstream, std::cerr,std::endl;
 
 		if (!inFile.good())
 		{
-			cerr << "Can't open mesh file " << path << endl;
+			cerr << "Can't open mesh file " << path << '\n';
 			return nullptr;
 		}
 
@@ -100,7 +100,7 @@ using std::ifstream, std::cerr,std::endl;
 
 	Mesh* MeshLoader::noTexLoad(const char* path)
 	{
-		auto mesh = new Mesh();
+		const auto mesh = new Mesh();
 
 		ifstream inFile;
 
@@ -108,7 +108,7 @@ using std::ifstream, std::cerr,std::endl;
 
 		if (!inFile.good())
 		{
-			cerr << "Can't open mesh file " << path << endl;
+			cerr << "Can't open mesh file " << path << '\n';
 			return nullptr;
 		}
 
