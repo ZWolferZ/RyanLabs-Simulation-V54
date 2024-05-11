@@ -1,7 +1,20 @@
-﻿  OpenGL.cpp
-C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(26,11): warning C4244: 'argument': conversion from 'const _Rep' to 'unsigned int', possible loss of data
-C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(26,11): warning C4244:         with
-C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(26,11): warning C4244:         [
-C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(26,11): warning C4244:             _Rep=__int64
-C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(26,11): warning C4244:         ]
+﻿  Cube.cpp
+  GLUTCallbacks.cpp
+  LinkedLists.cpp
+  MeshLoader.cpp
+  OBJLoader.cpp
+  OBJObjects.cpp
+  OpenGL.cpp
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(28,8): warning C4244: 'argument': conversion from 'const _Rep' to 'unsigned int', possible loss of data
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(28,8): warning C4244:         with
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(28,8): warning C4244:         [
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(28,8): warning C4244:             _Rep=__int64
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(28,8): warning C4244:         ]
+  SceneObject.cpp
+  StaticObjects.cpp
+  Texture2D.cpp
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\Texture2D.cpp(45,35): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\Texture2D.cpp(45,21): warning C4244: 'initializing': conversion from 'std::streamoff' to 'const int', possible loss of data
+  main.cpp
+  Generating Code...
   m015485n_Simulation_p.vcxproj -> C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\Debug\m015485n_Simulation_p.exe

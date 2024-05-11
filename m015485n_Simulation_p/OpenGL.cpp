@@ -12,6 +12,8 @@ bool RightButton = false;
 bool fullScreen = true;
 bool toggle = false;
 bool mouseToggle = false;
+
+bool texChange = false;
 GLfloat rotation = 0.0f;
 
 std::unique_ptr<LinkedLists> lists(new LinkedLists());
@@ -22,8 +24,8 @@ OpenGL::OpenGL(int argc, char* argv[])
 {
 	// Get a random seed by using the current time and the thread id
 	const auto seed = std::chrono::high_resolution_clock::now().time_since_epoch().count() +
-                std::hash<std::thread::id>{}(std::this_thread::get_id());
-    srand(seed);
+		std::hash<std::thread::id>{}(std::this_thread::get_id());
+	srand(seed);
 	InitGL(argc, argv);
 	InitObjects();
 	glutMainLoop();
@@ -37,6 +39,7 @@ void OpenGL::Display() const
 
 	glEnableClientState(GL_VERTEX_ARRAY);
 	glEnableClientState(GL_COLOR_ARRAY);
+	
 
 
 	DrawString("Graphics Renderer Property of RyanLabs", &c, -1.0f, 0.95f);
@@ -169,7 +172,7 @@ void OpenGL::keyboardControls(const unsigned char key, int x, int y)
 	switch (key)
 	{
 	case 'r': // Reset camera
-		case 'R': 
+	case 'R':
 		cameraX = 0.75f;
 		cameraY = 0.0f;
 		cameraZ = 4.0f;
@@ -179,7 +182,7 @@ void OpenGL::keyboardControls(const unsigned char key, int x, int y)
 		break;
 
 	case 'p': // Print camera position
-		case 'P': 
+	case 'P':
 		std::cout << "Camera Position: (" << cameraX << ", " << cameraY << ", " << cameraZ << ")" << '\n';
 		glutSetCursor(GLUT_CURSOR_LEFT_ARROW);
 		glutLeaveFullScreen();
@@ -192,7 +195,7 @@ void OpenGL::keyboardControls(const unsigned char key, int x, int y)
 		break;
 
 	case 'o': // Print camera rotation
-		case 'O':
+	case 'O':
 		std::cout << "Camera Rotation: (" << cameraYaw << ", " << cameraPitch << ")" << '\n';
 		glutSetCursor(GLUT_CURSOR_LEFT_ARROW);
 		glutLeaveFullScreen();
@@ -205,7 +208,7 @@ void OpenGL::keyboardControls(const unsigned char key, int x, int y)
 		break;
 
 	case 'l':
-		case 'L':
+	case 'L':
 		glutSetCursor(GLUT_CURSOR_LEFT_ARROW);
 		glutLeaveFullScreen();
 		fullScreen = false;
@@ -227,7 +230,7 @@ void OpenGL::keyboardControls(const unsigned char key, int x, int y)
 		break;
 
 	case 'f':
-		case 'F':
+	case 'F':
 
 		if (!fullScreen)
 		{
@@ -243,23 +246,40 @@ void OpenGL::keyboardControls(const unsigned char key, int x, int y)
 		break;
 
 	case 'w':
-		case 'W':
+	case 'W':
 		UpButton = true;
 		break;
 
 	case 's':
-		case 'S':
+	case 'S':
 		DownButton = true;
 		break;
 
 	case 'a':
-		case 'A':
+	case 'A':
 		LeftButton = true;
 		break;
 
 	case 'd':
-		case 'D':
+	case 'D':
 		RightButton = true;
+		break;
+
+	case 'x':
+	case 'X':
+
+		for (int i = 0; i < cubeNumber; i++)
+		{
+			if (objects[i] != nullptr)
+			{
+				delete objects[i];
+				objects[i] = nullptr;
+			}
+		}
+
+
+		textureChange();
+
 		break;
 
 	case 8:
@@ -317,7 +337,7 @@ void OpenGL::keyboardControls(const unsigned char key, int x, int y)
 		break;
 
 	case't':
-		case 'T':
+	case 'T':
 		if (mouseToggle)
 		{
 			mouseToggle = false;
@@ -330,9 +350,9 @@ void OpenGL::keyboardControls(const unsigned char key, int x, int y)
 
 		break;
 
-		case 'c':
-			case 'C':
-			glutSetCursor(GLUT_CURSOR_LEFT_ARROW);
+	case 'c':
+	case 'C':
+		glutSetCursor(GLUT_CURSOR_LEFT_ARROW);
 		glutLeaveFullScreen();
 		fullScreen = false;
 		maximizeConsoleWindow();
@@ -340,7 +360,7 @@ void OpenGL::keyboardControls(const unsigned char key, int x, int y)
 		minimizeConsoleWindow();
 		glutFullScreen();
 		fullScreen = true;
-			break;
+		break;
 
 	default: ;
 	}
@@ -353,22 +373,22 @@ void OpenGL::keyboardControlsUp(const unsigned char key, int x, int y)
 		switch (key)
 		{
 		case 'w':
-			case 'W':
+		case 'W':
 			UpButton = false;
 			break;
 
 		case 's':
-			case 'S':
+		case 'S':
 			DownButton = false;
 			break;
 
 		case 'a':
-			case 'A':
+		case 'A':
 			LeftButton = false;
 			break;
 
 		case 'd':
-			case 'D':
+		case 'D':
 			RightButton = false;
 			break;
 
@@ -650,6 +670,46 @@ void OpenGL::mouseWheel(int wheel, int direction, int x, int y)
 	}
 }
 
+void OpenGL::textureChange()
+{
+	if (!texChange)
+	{
+		auto* cubeMesh = MeshLoader::texLoad(("Objects/cube.txt"));
+
+		auto* texture = new Texture2D();
+
+		texture->Load(("Textures/Penguins.raw"), 512, 512);
+
+		for (int i = 0; i < cubeNumber; i++)
+		{
+
+
+			objects[i] = new Cube(cubeMesh, texture, ((rand() % 400) / 10.0f) - 20.0f, ((rand() % 200) / 10.0f) - 10.0f,
+			                      -(rand() % 1000) / 10.0f);
+		}
+
+		texChange = true;
+	}
+	else
+	{
+		auto* cubeMesh = MeshLoader::texLoad(("Objects/cube.txt"));
+
+		auto* texture = new Texture2D();
+
+		texture->Load(("Textures/stars.raw"), 512, 512);
+
+		for (int i = 0; i < cubeNumber; i++)
+		{
+
+
+			objects[i] = new Cube(cubeMesh, texture, ((rand() % 400) / 10.0f) - 20.0f, ((rand() % 200) / 10.0f) - 10.0f,
+			                      -(rand() % 1000) / 10.0f);
+		}
+
+		texChange = false;
+	}
+}
+
 
 OpenGL::~OpenGL()
 {
@@ -662,6 +722,6 @@ OpenGL::~OpenGL()
 		}
 	}
 
-
+	
 	GLUTCallbacks::Destroy();
 }

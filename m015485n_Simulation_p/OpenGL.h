@@ -51,6 +51,8 @@ public:
 
 	static void mouseWheel(int wheel, int direction, int x, int y);
 
+	 void textureChange();
+
 private:
 	SceneObject* objects[objectLimit];
 };
