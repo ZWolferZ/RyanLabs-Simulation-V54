@@ -60,6 +60,20 @@ struct ListNode
 	ListNode* next;
 };
 
+struct Lighting
+{
+	Vector4 ambient;
+	Vector4 diffuse;
+	Vector4 specular;
+};
+
+struct Material
+{
+		Vector4 ambient;
+	Vector4 diffuse;
+	Vector4 specular;
+	GLfloat shininess;
+};
 
 struct Mesh
 {

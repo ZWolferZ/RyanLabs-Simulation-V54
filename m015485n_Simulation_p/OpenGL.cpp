@@ -12,6 +12,7 @@ bool RightButton = false;
 bool fullScreen = true;
 bool toggle = false;
 bool mouseToggle = false;
+bool lightingEnabled = false;
 
 bool texChange = false;
 GLfloat rotation = 0.0f;
@@ -28,6 +29,7 @@ OpenGL::OpenGL(int argc, char* argv[])
 	srand(seed);
 	InitGL(argc, argv);
 	InitObjects();
+	InitLighting();
 	glutMainLoop();
 }
 
@@ -39,7 +41,6 @@ void OpenGL::Display() const
 
 	glEnableClientState(GL_VERTEX_ARRAY);
 	glEnableClientState(GL_COLOR_ARRAY);
-	
 
 
 	DrawString("Graphics Renderer Property of RyanLabs", &c, -1.0f, 0.95f);
@@ -65,6 +66,7 @@ void OpenGL::Display() const
 		if (object != nullptr)
 		{
 			glEnable(GL_TEXTURE_2D);
+
 			object->DrawCubes();
 			object->DrawOBJ();
 
@@ -153,6 +155,15 @@ void OpenGL::updateRefreshrate()
 			object->Update();
 		}
 	}
+
+	glLightfv(GL_LIGHT0,GL_AMBIENT, &(lightData->ambient.x));
+
+	glLightfv(GL_LIGHT0, GL_DIFFUSE, &(lightData->diffuse.x));
+
+	glLightfv(GL_LIGHT0, GL_SPECULAR, &(lightData->specular.x));
+
+	glLightfv(GL_LIGHT0, GL_POSITION, &(lightPosition->x));
+
 	rotation += 1;
 
 	if (rotation == 360)
@@ -362,6 +373,38 @@ void OpenGL::keyboardControls(const unsigned char key, int x, int y)
 		fullScreen = true;
 		break;
 
+	case 'z':
+	case 'Z':
+
+		if (lightingEnabled)
+		{
+			for (auto& object : objects)
+			{
+				if (object != nullptr)
+				{
+					object->materialChange = false;
+				}
+			}
+			lightingEnabled = false;
+			glDisable(GL_LIGHTING);
+			glDisable(GL_LIGHT0);
+		}
+		else
+		{
+			for (auto& object : objects)
+			{
+				if (object != nullptr)
+				{
+					object->materialChange = true;
+				}
+			}
+			lightingEnabled = true;
+			glEnable(GL_LIGHTING);
+			glEnable(GL_LIGHT0);
+		}
+
+
+		break;
 	default: ;
 	}
 }
@@ -576,6 +619,33 @@ void OpenGL::InitObjects()
 	}
 }
 
+void OpenGL::InitLighting()
+{
+	lightPosition = new Vector4();
+
+	lightPosition->x = 0.0f;
+	lightPosition->y = 0.0f;
+	lightPosition->z = 0.0f;
+	lightPosition->w = 1.0f;
+
+	lightData = new Lighting();
+
+	lightData->ambient.x = 0.2;
+	lightData->ambient.y = 0.2;
+	lightData->ambient.z = 0.2;
+	lightData->ambient.w = 1.0;
+
+	lightData->diffuse.x = 0.8;
+	lightData->diffuse.y = 0.8;
+	lightData->diffuse.z = 0.8;
+	lightData->diffuse.w = 1.0;
+
+	lightData->specular.x = 0.2;
+	lightData->specular.y = 0.2;
+	lightData->specular.z = 0.2;
+	lightData->specular.w = 1.0;
+}
+
 
 void OpenGL::DrawString(const char* text, Color* color, float x, float y)
 {
@@ -682,8 +752,6 @@ void OpenGL::textureChange()
 
 		for (int i = 0; i < cubeNumber; i++)
 		{
-
-
 			objects[i] = new Cube(cubeMesh, texture, ((rand() % 400) / 10.0f) - 20.0f, ((rand() % 200) / 10.0f) - 10.0f,
 			                      -(rand() % 1000) / 10.0f);
 		}
@@ -700,8 +768,6 @@ void OpenGL::textureChange()
 
 		for (int i = 0; i < cubeNumber; i++)
 		{
-
-
 			objects[i] = new Cube(cubeMesh, texture, ((rand() % 400) / 10.0f) - 20.0f, ((rand() % 200) / 10.0f) - 10.0f,
 			                      -(rand() % 1000) / 10.0f);
 		}
@@ -722,6 +788,6 @@ OpenGL::~OpenGL()
 		}
 	}
 
-	
+
 	GLUTCallbacks::Destroy();
 }

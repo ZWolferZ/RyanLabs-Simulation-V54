@@ -15,11 +15,13 @@ public:
 	SceneObject(Mesh* mesh, OBJMesh* objMesh, Texture2D* texture);
 	virtual ~SceneObject() = default;
 
+	bool materialChange = false;
+
 	virtual void Update()
 	{
 	}
 
-	virtual void DrawCubes() const
+	virtual void DrawCubes() 
 	{
 	}
 

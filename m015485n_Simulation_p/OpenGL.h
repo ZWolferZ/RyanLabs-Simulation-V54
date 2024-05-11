@@ -45,15 +45,23 @@ public:
 
 	void InitObjects();
 
+	void InitLighting();
+
 	static void DrawString(const char* text, Color* color, float x, float y);
 
 	static void mouseRotation(int x, int y);
 
 	static void mouseWheel(int wheel, int direction, int x, int y);
 
+	
+
 	 void textureChange();
 
 private:
 	SceneObject* objects[objectLimit];
+
+
+	Vector4* lightPosition;
+	Lighting* lightData;
 };
 #endif // _OPENGL_H
