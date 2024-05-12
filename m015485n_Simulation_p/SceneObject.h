@@ -17,6 +17,8 @@ public:
 
 	bool materialChange = false;
 
+	bool isMoving = true;
+
 	virtual void Update()
 	{
 	}

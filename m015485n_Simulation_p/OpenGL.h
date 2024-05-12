@@ -5,6 +5,7 @@
 #include <chrono>
 #include <thread>
 #include <cmath>
+#include <string>
 #include <iostream>
 #include <gl/GL.h>
 #include <gl/GLU.h>
@@ -47,7 +48,7 @@ public:
 
 	void InitLighting();
 
-	static void DrawString(const char* text, Color* color, float x, float y);
+	static void DrawString(const std::string& text, Color* color, float x, float y);
 
 	static void mouseRotation(int x, int y);
 

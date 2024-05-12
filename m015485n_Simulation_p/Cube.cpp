@@ -38,7 +38,7 @@ Cube::Cube(Mesh* mesh, Texture2D* texture, float x, float y, float z) : SceneObj
 Cube::~Cube() = default;
 
 
-void Cube::DrawCubes() 
+void Cube::DrawCubes()
 {
 	if (_mesh->Vertices != nullptr && _mesh->Colors != nullptr && _mesh->Indices != nullptr)
 	{
@@ -50,11 +50,22 @@ void Cube::DrawCubes()
 		glColorPointer(3, GL_FLOAT, 0, _mesh->Colors);
 		glTexCoordPointer(2, GL_FLOAT, 0, _mesh->texCoords);
 
+		if (materialChange == true)
+		{
 			SetMaterial();
-		glMaterialfv(GL_FRONT, GL_AMBIENT, &(material->ambient.x));
-		glMaterialfv(GL_FRONT, GL_DIFFUSE, &(material->diffuse.x));
-		glMaterialfv(GL_FRONT, GL_SPECULAR, &(material->specular.x));
-		glMaterialf(GL_FRONT, GL_SHININESS, material->shininess);
+			glMaterialfv(GL_FRONT, GL_AMBIENT, &(material->ambient.x));
+			glMaterialfv(GL_FRONT, GL_DIFFUSE, &(material->diffuse.x));
+			glMaterialfv(GL_FRONT, GL_SPECULAR, &(material->specular.x));
+			glMaterialf(GL_FRONT, GL_SHININESS, material->shininess);
+		}
+		else
+		{
+			SetMaterial();
+			glMaterialfv(GL_FRONT, GL_AMBIENT, &(material->ambient.x));
+			glMaterialfv(GL_FRONT, GL_DIFFUSE, &(material->diffuse.x));
+			glMaterialfv(GL_FRONT, GL_SPECULAR, &(material->specular.x));
+			glMaterialf(GL_FRONT, GL_SHININESS, material->shininess);
+		}
 
 
 		glPushMatrix();
@@ -99,27 +110,57 @@ void Cube::Update()
 		rotation = 0.0f;
 	}
 
-
-	position.z += velocity;
-
-	if (position.z >= 1)
+	if (isMoving)
 	{
-		position.z = -80;
+		position.z += velocity;
+
+		if (position.z >= 1)
+		{
+			position.z = -80;
+		}
 	}
 }
 
 void Cube::SetMaterial()
 {
-	material = new Material();
+	if (materialChange)
+	{
+		material->ambient.x = 0.8f;
+		material->ambient.y = 0.05f;
+		material->ambient.z = 0.05f;
+		material->ambient.w = 1.0f;
 
-	material->ambient.x = 0.8f; material->ambient.y = 0.05f; material->ambient.z = 0.05f;
-	material->ambient.w = 1.0f;
+		material->diffuse.x = 0.8f;
+		material->diffuse.y = 0.05f;
+		material->diffuse.z = 0.05f;
+		material->diffuse.w = 1.0f;
 
-	material->diffuse.x = 0.8f; material->diffuse.y = 0.05f; material->diffuse.z = 0.05f;
-	material->diffuse.w = 1.0f;
+		material->specular.x = 1.0f;
+		material->specular.y = 1.0f;
+		material->specular.z = 1.0f;
+		material->specular.w = 1.0f;
 
-	material->specular.x = 1.0f; material->specular.y = 1.0f; material->specular.z = 1.0f;
-	material->specular.w = 1.0f;
+		material->shininess = 100.0f;
+	}
+	else
+	{
+		material = new Material();
 
-	material->shininess = 100.0f;
+		material->ambient.x = 1.0f;
+		material->ambient.y = 1.00f;
+		material->ambient.z = 1.00f;
+		material->ambient.w = 1.0f;
+
+		material->diffuse.x = 1.0f;
+		material->diffuse.y = 1.0f;
+		material->diffuse.z = 1.00f;
+		material->diffuse.w = 1.0f;
+
+		material->specular.x = 1.0f;
+		material->specular.y = 1.0f;
+		material->specular.z = 1.0f;
+		material->specular.w = 1.0f;
+
+		material->shininess = 100.0f;
+	}
 }
