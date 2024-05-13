@@ -21,6 +21,7 @@ bool materialEnabled = false;
 bool texChange = false;
 bool cubeMovement = true;
 bool fogEnabled= true;
+bool scaleFlip = false;
 int temp;
 int count = objectCount;
 GLfloat rotation = 0.0f;
@@ -264,7 +265,7 @@ void maximizeConsoleWindow()
 	ShowWindow(handle, SW_MAXIMIZE);
 }
 
-bool scaleflip = false;
+
 
 void OpenGL::updateRefreshrate()
 {
@@ -295,7 +296,7 @@ void OpenGL::updateRefreshrate()
 		rotation = 0;
 	}
 
-	if (!scaleflip)
+	if (!scaleFlip)
 	{
 		scale += 1;
 	}
@@ -306,12 +307,12 @@ void OpenGL::updateRefreshrate()
 
 	if (scale == 0)
 	{
-		scaleflip = !scaleflip;
+		scaleFlip = !scaleFlip;
 	}
 
 	if (scale == 75)
 	{
-		scaleflip = !scaleflip;
+		scaleFlip = !scaleFlip;
 	}
 
 	GLUTCallbacks::updateCamera();

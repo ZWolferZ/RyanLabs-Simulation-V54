@@ -1,17 +1,17 @@
 ﻿  OpenGL.cpp
-C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(48,8): warning C4244: 'argument': conversion from 'const _Rep' to 'unsigned int', possible loss of data
-C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(48,8): warning C4244:         with
-C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(48,8): warning C4244:         [
-C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(48,8): warning C4244:             _Rep=__int64
-C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(48,8): warning C4244:         ]
-C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(103,40): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(928,25): warning C4305: '=': truncation from 'double' to 'GLfloat'
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(49,8): warning C4244: 'argument': conversion from 'const _Rep' to 'unsigned int', possible loss of data
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(49,8): warning C4244:         with
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(49,8): warning C4244:         [
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(49,8): warning C4244:             _Rep=__int64
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(49,8): warning C4244:         ]
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(104,40): warning C4305: 'argument': truncation from 'double' to 'float'
 C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(929,25): warning C4305: '=': truncation from 'double' to 'GLfloat'
 C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(930,25): warning C4305: '=': truncation from 'double' to 'GLfloat'
-C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(933,25): warning C4305: '=': truncation from 'double' to 'GLfloat'
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(931,25): warning C4305: '=': truncation from 'double' to 'GLfloat'
 C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(934,25): warning C4305: '=': truncation from 'double' to 'GLfloat'
 C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(935,25): warning C4305: '=': truncation from 'double' to 'GLfloat'
-C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(938,26): warning C4305: '=': truncation from 'double' to 'GLfloat'
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(936,25): warning C4305: '=': truncation from 'double' to 'GLfloat'
 C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(939,26): warning C4305: '=': truncation from 'double' to 'GLfloat'
 C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(940,26): warning C4305: '=': truncation from 'double' to 'GLfloat'
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(941,26): warning C4305: '=': truncation from 'double' to 'GLfloat'
   m015485n_Simulation_p.vcxproj -> C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\Debug\m015485n_Simulation_p.exe
