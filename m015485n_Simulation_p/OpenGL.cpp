@@ -5,7 +5,7 @@ GLfloat cameraY = 0.0f;
 GLfloat cameraZ = 4.0f;
 GLfloat cameraYaw = 0.0f;
 GLfloat cameraPitch = 0.0f;
-GLint scale = 0;
+GLfloat scale = 0;
 bool UpButton = false;
 bool DownButton = false;
 bool LeftButton = false;
@@ -20,12 +20,15 @@ bool lightingEnabled = false;
 bool materialEnabled = false;
 bool texChange = false;
 bool cubeMovement = true;
+bool fogEnabled= true;
 int temp;
 int count = objectCount;
 GLfloat rotation = 0.0f;
 
+
+// Random seed for object generation by using the current time and adding my birthday
 const auto seed = std::chrono::high_resolution_clock::now().time_since_epoch().count() +
-	std::hash<std::thread::id>{}(std::this_thread::get_id());
+	14 + 07 + 2005;
 
 
 std::unique_ptr<LinkedLists> lists(new LinkedLists());
@@ -35,6 +38,8 @@ Color c = {0.0f, 1.0f, 0.0f};
 Color c2 = {1.0f, 0.0f, 0.0f};
 
 Color c3 = {0.0f, 0.0f, 1.0f};
+
+Color c4 = {1.0f, 1.0f, 1.0f};
 
 OpenGL::OpenGL(int argc, char* argv[])
 {
@@ -57,9 +62,9 @@ void OpenGL::Display() const
 	glEnableClientState(GL_COLOR_ARRAY);
 	if (mainMenu)
 	{
-		DrawString("GRAPHICS SIMULATION BY RYAN MOAKES", &c3, -0.8f, 0.0f);
-		DrawString("CHOOSE A OPTION TO START", &c3, -0.8f, -0.1f);
-		DrawString("USE LEFT AND RIGHT ARROW KEYS & CONFIRM WITH ENTER:", &c3, -0.8f, -0.2f);
+		DrawString("GRAPHICS SIMULATION BY RYAN MOAKES", &c4, -0.8f, 0.0f);
+		DrawString("CHOOSE A OPTION TO START", &c4, -0.8f, -0.1f);
+		DrawString("USE LEFT AND RIGHT ARROW KEYS & CONFIRM WITH ENTER:", &c4, -0.8f, -0.2f);
 		if (playSelected)
 		{
 			DrawString("PLAY", &c, -0.8f, -0.35f);
@@ -106,16 +111,17 @@ void OpenGL::Display() const
 		DrawString(std::to_string(cameraYaw), &c, 0.66f, 0.9f);
 		DrawString(std::to_string(cameraPitch), &c, 0.775f, 0.9f);
 
-		DrawString("CONTROLS:", &c, -1.0f, -0.1f);
+		DrawString("CONTROLS:", &c, -1.0f, -0.05f);
 
-		DrawString("Move mouse to rotate camera around the origin", &c, -1.0f, -0.2f);
-		DrawString("Scroll mouse wheel to zoom in/out", &c, -1.0f, -0.25f);
-		DrawString("WASD / ARROWS to move camera position", &c, -1.0f, -0.3f);
-		DrawString("Press 'R' to reset camera", &c, -1.0f, -0.35f);
-		DrawString("Press 'F' to toggle fullscreen", &c, -1.0f, -0.4f);
-		DrawString("Press 'T' to toggle mouse lock", &c, -1.0f, -0.45f);
-		DrawString("Press 'Q' to toggle lighting", &c, -1.0f, -0.5f);
-		DrawString("Press 'E' to toggle material (NEEDS LIGHTING ENABLED)", &c, -1.0f, -0.55f);
+		DrawString("Move mouse to rotate camera around the origin", &c, -1.0f, -0.15f);
+		DrawString("Scroll mouse wheel to zoom in/out", &c, -1.0f, -0.2f);
+		DrawString("WASD / ARROWS to move camera position", &c, -1.0f, -0.25f);
+		DrawString("Press 'R' to reset camera", &c, -1.0f, -0.3f);
+		DrawString("Press 'F' to toggle fullscreen", &c, -1.0f, -0.35f);
+		DrawString("Press 'T' to toggle mouse lock", &c, -1.0f, -0.4f);
+		DrawString("Press 'Q' to toggle lighting", &c, -1.0f, -0.45f);
+		DrawString("Press 'E' to toggle material (NEEDS LIGHTING ENABLED)", &c, -1.0f, -0.5f);
+		DrawString("Press 'Z' to toggle fog", &c, -1.0f, -0.55f);
 		DrawString("Press 'SPACE' to toggle object movement", &c, -1.0f, -0.6f);
 		DrawString("Press 'X' to change texture", &c, -1.0f, -0.65f);
 		DrawString("Press 'C' to see the console for 5 seconds", &c, -1.0f, -0.7f);
@@ -134,6 +140,22 @@ void OpenGL::Display() const
 			DrawString("TEXTURE: PENGUINS", &c, 0.0f, 0.8f);
 		}
 
+			if (cubeMovement)
+		{
+						DrawString("OBJECT MOVEMENT ENABLED", &c, 0.0f, 0.75f);
+		}
+		else
+		{
+						DrawString("OBJECT MOVEMENT DISABLED", &c, 0.0f, 0.75f);
+		}
+			if (fogEnabled)
+			{
+						DrawString("FOG ENABLED", &c, 0.0f, 0.7f);
+			}
+			else
+			{
+						DrawString("FOG DISABLED", &c, 0.0f, 0.7f);
+			}
 
 		if (lightingEnabled)
 		{
@@ -156,6 +178,8 @@ void OpenGL::Display() const
 			glDisable(GL_LIGHTING);
 			glDisable(GL_LIGHT0);
 		}
+
+	
 
 		for (const auto object : objects)
 		{
@@ -617,6 +641,22 @@ void OpenGL::keyboardControls(const unsigned char key, int x, int y)
 
 			break;
 
+			case 'z':
+		case 'Z':
+
+			if  (fogEnabled)
+			{
+								glDisable(GL_FOG);
+				fogEnabled = false;
+			}
+			else
+			{
+								glEnable(GL_FOG);
+				fogEnabled = true;
+			}
+
+			break;
+
 		default:
 			break;
 		}
@@ -1008,8 +1048,11 @@ void OpenGL::mouseWheel(int wheel, int direction, int x, int y)
 
 void OpenGL::textureChange()
 {
+	cubeMovement = true;
+
 	if (!texChange)
 	{
+		
 		auto* cubeMesh = MeshLoader::texLoad(("Objects/cube.txt"));
 
 		auto* texture = new Texture2D();
@@ -1027,6 +1070,7 @@ void OpenGL::textureChange()
 	}
 	else
 	{
+		
 		auto* cubeMesh = MeshLoader::texLoad(("Objects/cube.txt"));
 
 		auto* texture = new Texture2D();
