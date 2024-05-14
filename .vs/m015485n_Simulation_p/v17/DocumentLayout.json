@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Ryan Moakes\\Documents\\GitHub\\m015485n_Simulation_p\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1F856F2E-C3F0-4535-A122-4A872FBB4AF7}|m015485n_Simulation_p\\m015485n_Simulation_p.vcxproj|C:\\Users\\Ryan Moakes\\Documents\\GitHub\\m015485n_Simulation_p\\m015485n_Simulation_p\\Texture2D.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{1F856F2E-C3F0-4535-A122-4A872FBB4AF7}|m015485n_Simulation_p\\m015485n_Simulation_p.vcxproj|solutionrelative:m015485n_Simulation_p\\Texture2D.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{1F856F2E-C3F0-4535-A122-4A872FBB4AF7}|m015485n_Simulation_p\\m015485n_Simulation_p.vcxproj|C:\\Users\\Ryan Moakes\\Documents\\GitHub\\m015485n_Simulation_p\\m015485n_Simulation_p\\MeshLoader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1F856F2E-C3F0-4535-A122-4A872FBB4AF7}|m015485n_Simulation_p\\m015485n_Simulation_p.vcxproj|solutionrelative:m015485n_Simulation_p\\MeshLoader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F856F2E-C3F0-4535-A122-4A872FBB4AF7}|m015485n_Simulation_p\\m015485n_Simulation_p.vcxproj|C:\\Users\\Ryan Moakes\\Documents\\GitHub\\m015485n_Simulation_p\\m015485n_Simulation_p\\OpenGL.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1F856F2E-C3F0-4535-A122-4A872FBB4AF7}|m015485n_Simulation_p\\m015485n_Simulation_p.vcxproj|solutionrelative:m015485n_Simulation_p\\OpenGL.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1F856F2E-C3F0-4535-A122-4A872FBB4AF7}|m015485n_Simulation_p\\m015485n_Simulation_p.vcxproj|C:\\Users\\Ryan Moakes\\Documents\\GitHub\\m015485n_Simulation_p\\m015485n_Simulation_p\\StaticObjects.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{1F856F2E-C3F0-4535-A122-4A872FBB4AF7}|m015485n_Simulation_p\\m015485n_Simulation_p.vcxproj|solutionrelative:m015485n_Simulation_p\\StaticObjects.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1F856F2E-C3F0-4535-A122-4A872FBB4AF7}|m015485n_Simulation_p\\m015485n_Simulation_p.vcxproj|C:\\Users\\Ryan Moakes\\Documents\\GitHub\\m015485n_Simulation_p\\m015485n_Simulation_p\\SceneObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{1F856F2E-C3F0-4535-A122-4A872FBB4AF7}|m015485n_Simulation_p\\m015485n_Simulation_p.vcxproj|solutionrelative:m015485n_Simulation_p\\SceneObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{1F856F2E-C3F0-4535-A122-4A872FBB4AF7}|m015485n_Simulation_p\\m015485n_Simulation_p.vcxproj|C:\\Users\\Ryan Moakes\\Documents\\GitHub\\m015485n_Simulation_p\\m015485n_Simulation_p\\Texture2D.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1F856F2E-C3F0-4535-A122-4A872FBB4AF7}|m015485n_Simulation_p\\m015485n_Simulation_p.vcxproj|solutionrelative:m015485n_Simulation_p\\Texture2D.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1F856F2E-C3F0-4535-A122-4A872FBB4AF7}|m015485n_Simulation_p\\m015485n_Simulation_p.vcxproj|C:\\Users\\Ryan Moakes\\Documents\\GitHub\\m015485n_Simulation_p\\m015485n_Simulation_p\\OpenGL.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{1F856F2E-C3F0-4535-A122-4A872FBB4AF7}|m015485n_Simulation_p\\m015485n_Simulation_p.vcxproj|solutionrelative:m015485n_Simulation_p\\OpenGL.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{1F856F2E-C3F0-4535-A122-4A872FBB4AF7}|m015485n_Simulation_p\\m015485n_Simulation_p.vcxproj|C:\\Users\\Ryan Moakes\\Documents\\GitHub\\m015485n_Simulation_p\\m015485n_Simulation_p\\SceneObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1F856F2E-C3F0-4535-A122-4A872FBB4AF7}|m015485n_Simulation_p\\m015485n_Simulation_p.vcxproj|solutionrelative:m015485n_Simulation_p\\SceneObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1F856F2E-C3F0-4535-A122-4A872FBB4AF7}|m015485n_Simulation_p\\m015485n_Simulation_p.vcxproj|C:\\Users\\Ryan Moakes\\Documents\\GitHub\\m015485n_Simulation_p\\m015485n_Simulation_p\\OBJObjects.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -25,10 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{1F856F2E-C3F0-4535-A122-4A872FBB4AF7}|m015485n_Simulation_p\\m015485n_Simulation_p.vcxproj|C:\\Users\\Ryan Moakes\\Documents\\GitHub\\m015485n_Simulation_p\\m015485n_Simulation_p\\OBJLoader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{1F856F2E-C3F0-4535-A122-4A872FBB4AF7}|m015485n_Simulation_p\\m015485n_Simulation_p.vcxproj|solutionrelative:m015485n_Simulation_p\\OBJLoader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1F856F2E-C3F0-4535-A122-4A872FBB4AF7}|m015485n_Simulation_p\\m015485n_Simulation_p.vcxproj|C:\\Users\\Ryan Moakes\\Documents\\GitHub\\m015485n_Simulation_p\\m015485n_Simulation_p\\MeshLoader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{1F856F2E-C3F0-4535-A122-4A872FBB4AF7}|m015485n_Simulation_p\\m015485n_Simulation_p.vcxproj|solutionrelative:m015485n_Simulation_p\\MeshLoader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1F856F2E-C3F0-4535-A122-4A872FBB4AF7}|m015485n_Simulation_p\\m015485n_Simulation_p.vcxproj|C:\\Users\\Ryan Moakes\\Documents\\GitHub\\m015485n_Simulation_p\\m015485n_Simulation_p\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -98,11 +98,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "OpenGL.cpp",
               "DocumentMoniker": "C:\\Users\\Ryan Moakes\\Documents\\GitHub\\m015485n_Simulation_p\\m015485n_Simulation_p\\OpenGL.cpp",
               "RelativeDocumentMoniker": "m015485n_Simulation_p\\OpenGL.cpp",
@@ -124,8 +124,7 @@
               "RelativeToolTip": "m015485n_Simulation_p\\Texture2D.h",
               "ViewState": "AQIAAAgAAAAAAAAAAAAgwB0AAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-14T21:58:28.444Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-14T21:58:28.444Z"
             },
             {
               "$type": "Document",
@@ -137,8 +136,7 @@
               "RelativeToolTip": "m015485n_Simulation_p\\Cube.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-14T21:59:45.807Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-14T21:59:45.807Z"
             },
             {
               "$type": "Document",
@@ -150,8 +148,7 @@
               "RelativeToolTip": "m015485n_Simulation_p\\GLUTCallbacks.cpp",
               "ViewState": "AQIAAGsAAAAAAAAAAAAgwIYAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-14T22:03:45.091Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-14T22:03:45.091Z"
             },
             {
               "$type": "Document",
@@ -163,8 +160,7 @@
               "RelativeToolTip": "m015485n_Simulation_p\\LinkedLists.cpp",
               "ViewState": "AQIAAJgAAAAAAAAAAAAAwLMAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-14T22:03:58.091Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-14T22:03:58.091Z"
             },
             {
               "$type": "Document",
@@ -176,25 +172,24 @@
               "RelativeToolTip": "m015485n_Simulation_p\\main.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAABPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-14T22:04:12.619Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-14T22:04:12.619Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "MeshLoader.cpp",
               "DocumentMoniker": "C:\\Users\\Ryan Moakes\\Documents\\GitHub\\m015485n_Simulation_p\\m015485n_Simulation_p\\MeshLoader.cpp",
               "RelativeDocumentMoniker": "m015485n_Simulation_p\\MeshLoader.cpp",
               "ToolTip": "C:\\Users\\Ryan Moakes\\Documents\\GitHub\\m015485n_Simulation_p\\m015485n_Simulation_p\\MeshLoader.cpp",
               "RelativeToolTip": "m015485n_Simulation_p\\MeshLoader.cpp",
-              "ViewState": "AQIAAFkAAAAAAAAAAAAAwHMAAABAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-05-14T22:04:28.21Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "OBJLoader.cpp",
               "DocumentMoniker": "C:\\Users\\Ryan Moakes\\Documents\\GitHub\\m015485n_Simulation_p\\m015485n_Simulation_p\\OBJLoader.cpp",
               "RelativeDocumentMoniker": "m015485n_Simulation_p\\OBJLoader.cpp",
@@ -202,12 +197,11 @@
               "RelativeToolTip": "m015485n_Simulation_p\\OBJLoader.cpp",
               "ViewState": "AQIAABQAAAAAAAAAAAAAwDQAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-14T22:04:41.642Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-14T22:04:41.642Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "OBJObjects.cpp",
               "DocumentMoniker": "C:\\Users\\Ryan Moakes\\Documents\\GitHub\\m015485n_Simulation_p\\m015485n_Simulation_p\\OBJObjects.cpp",
               "RelativeDocumentMoniker": "m015485n_Simulation_p\\OBJObjects.cpp",
@@ -215,12 +209,11 @@
               "RelativeToolTip": "m015485n_Simulation_p\\OBJObjects.cpp",
               "ViewState": "AQIAAAgAAAAAAAAAAAAswCcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-14T22:05:06.705Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-14T22:05:06.705Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "SceneObject.cpp",
               "DocumentMoniker": "C:\\Users\\Ryan Moakes\\Documents\\GitHub\\m015485n_Simulation_p\\m015485n_Simulation_p\\SceneObject.cpp",
               "RelativeDocumentMoniker": "m015485n_Simulation_p\\SceneObject.cpp",
@@ -228,31 +221,30 @@
               "RelativeToolTip": "m015485n_Simulation_p\\SceneObject.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-14T22:05:38.159Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-14T22:05:38.159Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "StaticObjects.cpp",
               "DocumentMoniker": "C:\\Users\\Ryan Moakes\\Documents\\GitHub\\m015485n_Simulation_p\\m015485n_Simulation_p\\StaticObjects.cpp",
               "RelativeDocumentMoniker": "m015485n_Simulation_p\\StaticObjects.cpp",
               "ToolTip": "C:\\Users\\Ryan Moakes\\Documents\\GitHub\\m015485n_Simulation_p\\m015485n_Simulation_p\\StaticObjects.cpp",
               "RelativeToolTip": "m015485n_Simulation_p\\StaticObjects.cpp",
-              "ViewState": "AQIAAAMAAAAAAAAAAAA1wCAAAAAzAAAA",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAQwCAAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-05-14T21:55:03.364Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Texture2D.cpp",
               "DocumentMoniker": "C:\\Users\\Ryan Moakes\\Documents\\GitHub\\m015485n_Simulation_p\\m015485n_Simulation_p\\Texture2D.cpp",
               "RelativeDocumentMoniker": "m015485n_Simulation_p\\Texture2D.cpp",
               "ToolTip": "C:\\Users\\Ryan Moakes\\Documents\\GitHub\\m015485n_Simulation_p\\m015485n_Simulation_p\\Texture2D.cpp",
               "RelativeToolTip": "m015485n_Simulation_p\\Texture2D.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAABTAAAA",
+              "ViewState": "AQIAABAAAAAAAAAAAADwvx0AAABTAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-05-14T21:59:55.476Z",
               "EditorCaption": ""
@@ -267,8 +259,7 @@
               "RelativeToolTip": "m015485n_Simulation_p\\Structures.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-13T18:30:11.714Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-13T18:30:11.714Z"
             },
             {
               "$type": "Document",
@@ -280,8 +271,7 @@
               "RelativeToolTip": "m015485n_Simulation_p\\StaticObjects.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-14T21:53:03.58Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-14T21:53:03.58Z"
             },
             {
               "$type": "Document",
@@ -293,8 +283,7 @@
               "RelativeToolTip": "m015485n_Simulation_p\\SceneObject.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-14T21:47:46.471Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-14T21:47:46.471Z"
             },
             {
               "$type": "Document",
@@ -306,8 +295,7 @@
               "RelativeToolTip": "m015485n_Simulation_p\\OpenGL.h",
               "ViewState": "AQIAAEwAAAAAAAAAAAAAwGYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-14T19:03:29.91Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-14T19:03:29.91Z"
             },
             {
               "$type": "Document",
@@ -319,8 +307,7 @@
               "RelativeToolTip": "m015485n_Simulation_p\\OBJObjects.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-14T18:59:52.19Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-14T18:59:52.19Z"
             },
             {
               "$type": "Document",
@@ -332,8 +319,7 @@
               "RelativeToolTip": "m015485n_Simulation_p\\OBJLoader.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-14T18:59:54.525Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-14T18:59:54.525Z"
             },
             {
               "$type": "Document",
@@ -345,8 +331,7 @@
               "RelativeToolTip": "m015485n_Simulation_p\\MeshLoader.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-14T18:59:49.722Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-14T18:59:49.722Z"
             },
             {
               "$type": "Document",
@@ -358,8 +343,7 @@
               "RelativeToolTip": "m015485n_Simulation_p\\LinkedLists.h",
               "ViewState": "AQIAABsAAAAAAAAAAAAAACkAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-14T18:59:43.833Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-14T18:59:43.833Z"
             },
             {
               "$type": "Document",
@@ -371,8 +355,7 @@
               "RelativeToolTip": "m015485n_Simulation_p\\GLUTCallbacks.h",
               "ViewState": "AQIAABgAAAAAAAAAAAAAACYAAABgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-14T19:03:22.345Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-14T19:03:22.345Z"
             },
             {
               "$type": "Document",
@@ -384,8 +367,7 @@
               "RelativeToolTip": "m015485n_Simulation_p\\Cube.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-14T22:03:25.395Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-14T22:03:25.395Z"
             }
           ]
         }

@@ -5,8 +5,7 @@
 // ----------------------------- NAMESPACE ----------------------------- //
 namespace MeshLoader
 {
-	//Switched from using namespace std to only what is needed
-	using std::ifstream, std::cerr;
+	using namespace std;
 
 	// Function prototypes
 	void LoadVertices(ifstream& inFile, Mesh& mesh);

@@ -1,0 +1,33 @@
+﻿  Cube.cpp
+  GLUTCallbacks.cpp
+  OpenGL.cpp
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(59,8): warning C4244: 'argument': conversion from 'const _Rep' to 'unsigned int', possible loss of data
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(59,8): warning C4244:         with
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(59,8): warning C4244:         [
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(59,8): warning C4244:             _Rep=__int64
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(59,8): warning C4244:         ]
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(124,40): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(996,25): warning C4305: '=': truncation from 'double' to 'GLfloat'
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(997,25): warning C4305: '=': truncation from 'double' to 'GLfloat'
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(998,25): warning C4305: '=': truncation from 'double' to 'GLfloat'
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(1001,25): warning C4305: '=': truncation from 'double' to 'GLfloat'
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(1002,25): warning C4305: '=': truncation from 'double' to 'GLfloat'
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(1003,25): warning C4305: '=': truncation from 'double' to 'GLfloat'
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(1006,26): warning C4305: '=': truncation from 'double' to 'GLfloat'
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(1007,26): warning C4305: '=': truncation from 'double' to 'GLfloat'
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\OpenGL.cpp(1008,26): warning C4305: '=': truncation from 'double' to 'GLfloat'
+  LinkedLists.cpp
+  main.cpp
+  MeshLoader.cpp
+  OBJLoader.cpp
+  OBJObjects.cpp
+  SceneObject.cpp
+  StaticObjects.cpp
+  Texture2D.cpp
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\Texture2D.cpp(53,35): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
+C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\m015485n_Simulation_p\Texture2D.cpp(53,21): warning C4244: 'initializing': conversion from 'std::streamoff' to 'const int', possible loss of data
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 317 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  m015485n_Simulation_p.vcxproj -> C:\Users\Ryan Moakes\Documents\GitHub\m015485n_Simulation_p\Release\m015485n_Simulation_p.exe
