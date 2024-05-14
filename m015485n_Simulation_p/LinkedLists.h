@@ -43,7 +43,7 @@ public:
 	void DeleteList();
 
 	/// <summary>
-	/// Deletes the node after the specifed node.
+	/// Deletes the node after the specified node.
 	/// </summary>
 	static bool DeleteAfter(ListNode* prevNode);
 
@@ -53,7 +53,7 @@ public:
 	ListNode* GetNode(int pos) const;
 
 	/// <summary>
-	/// Finds the node with the specifed value.
+	/// Finds the node with the specified value.
 	/// </summary>
 	ListNode* Find(int val) const;
 

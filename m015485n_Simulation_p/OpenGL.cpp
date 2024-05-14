@@ -1,11 +1,19 @@
+// ----------------------------- INCLUDE ----------------------------- //
 #include "OpenGL.h"
+// ----------------------------- INCLUDE ----------------------------- //
 
+// ----------------------------- VARIABLES ----------------------------- //
+
+// GL Variables
 GLfloat cameraX = 0.75f;
 GLfloat cameraY = 0.0f;
 GLfloat cameraZ = 4.0f;
 GLfloat cameraYaw = 0.0f;
 GLfloat cameraPitch = 0.0f;
 GLfloat scale = 0;
+GLfloat rotation = 0.0f;
+
+// UI/Screen Variables
 bool UpButton = false;
 bool DownButton = false;
 bool LeftButton = false;
@@ -20,20 +28,21 @@ bool lightingEnabled = false;
 bool materialEnabled = false;
 bool texChange = false;
 bool cubeMovement = true;
-bool fogEnabled= true;
+bool fogEnabled = true;
 bool scaleFlip = false;
+
+//Linked List variables
 int temp;
 int count = objectCount;
-GLfloat rotation = 0.0f;
-
 
 // Random seed for object generation by using the current time and adding my birthday
 const auto seed = std::chrono::high_resolution_clock::now().time_since_epoch().count() +
 	14 + 07 + 2005;
 
-
+// Cool unique pointer for the linked list which deletes itself automatically when out of scope
 std::unique_ptr<LinkedLists> lists(new LinkedLists());
 
+// UI colour variables
 Color c = {0.0f, 1.0f, 0.0f};
 
 Color c2 = {1.0f, 0.0f, 0.0f};
@@ -42,6 +51,9 @@ Color c3 = {0.0f, 0.0f, 1.0f};
 
 Color c4 = {1.0f, 1.0f, 1.0f};
 
+// ----------------------------- VARIABLES ----------------------------- //
+
+// OpenGL Constructor to initialize the program
 OpenGL::OpenGL(int argc, char* argv[])
 {
 	srand(seed);
@@ -51,14 +63,18 @@ OpenGL::OpenGL(int argc, char* argv[])
 	glutMainLoop();
 }
 
+// Display function which renders the scene including the UI
 void OpenGL::Display() const
 {
+	// Clear the screen and depth buffer
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 
-
+	// Enable the vertex and colour arrays
 	glEnableClientState(GL_VERTEX_ARRAY);
 	glEnableClientState(GL_COLOR_ARRAY);
+
+	// Draw the UI for the main menu
 	if (mainMenu)
 	{
 		DrawString("GRAPHICS SIMULATION BY RYAN MOAKES", &c4, -0.8f, 0.0f);
@@ -74,6 +90,8 @@ void OpenGL::Display() const
 			DrawString("PLAY", &c2, -0.8f, -0.35f);
 			DrawString("QUIT", &c, -0.6f, -0.35f);
 		}
+
+		// Render the teapots for the menu graphic
 		glPushMatrix();
 		glColor3f(1.0f, 0.0f, 0.0f);
 		glRotatef(scale, 0.0f, 0.0f, 0.0f);
@@ -95,9 +113,13 @@ void OpenGL::Display() const
 		glutSolidTeapot(1);
 		glPopMatrix();
 	}
+	// Draw the UI for the main scene
 	else if (!mainMenu)
 	{
+		// I disable lighting here to make the text render without issue 
 		glDisable(GL_LIGHTING);
+
+		// The heads up display UI for the scene
 		DrawString("Graphics Renderer Property of RyanLabs", &c, -1.0f, 0.95f);
 		DrawString("RANDOM SEED:", &c, 0.0f, 0.85);
 		DrawString(std::to_string(seed), &c, 0.19f, 0.85f);
@@ -130,6 +152,7 @@ void OpenGL::Display() const
 		DrawString("Press 'O' to print camera rotation", &c, -1.0f, -0.9f);
 		DrawString("Press 'ESC' to quit", &c, -1.0f, -0.95f);
 
+		// If statements to control the UI changes on input
 		if (!texChange)
 		{
 			DrawString("TEXTURE: STARS", &c, 0.0f, 0.8f);
@@ -139,7 +162,7 @@ void OpenGL::Display() const
 			DrawString("TEXTURE: PENGUINS", &c, 0.0f, 0.8f);
 		}
 
-	    if (cubeMovement)
+		if (cubeMovement)
 		{
 			DrawString("OBJECT MOVEMENT ENABLED", &c, 0.0f, 0.75f);
 		}
@@ -150,10 +173,10 @@ void OpenGL::Display() const
 		if (fogEnabled)
 		{
 			DrawString("FOG ENABLED", &c, 0.0f, 0.7f);
-	    }
+		}
 		else
 		{
-		   DrawString("FOG DISABLED", &c, 0.0f, 0.7f);
+			DrawString("FOG DISABLED", &c, 0.0f, 0.7f);
 		}
 
 		if (lightingEnabled)
@@ -178,12 +201,13 @@ void OpenGL::Display() const
 			glDisable(GL_LIGHT0);
 		}
 
-	
 
+		// Main draw function for the scene objects
 		for (const auto object : objects)
 		{
 			if (object != nullptr)
 			{
+				//  Only enable textures for the cubes/obj objects as the other objects do not support it
 				glEnable(GL_TEXTURE_2D);
 
 				object->DrawCubes();
@@ -196,7 +220,7 @@ void OpenGL::Display() const
 			}
 		}
 
-
+		// Draw the Teapot timeline
 		// TOTALLY OBJ OBJECTS, JUST DON'T LOOK TO HARD
 
 		glPushMatrix();
@@ -243,14 +267,16 @@ void OpenGL::Display() const
 		glPopMatrix();
 	}
 
-
+	// Disable the vertex and colour arrays
 	glDisableClientState(GL_VERTEX_ARRAY);
 	glDisableClientState(GL_COLOR_ARRAY);
 
+	// Swap the buffers and flush the scene
 	glFlush();
 	glutSwapBuffers();
 }
 
+// Quick and dirty function to minimize and maximize the console window
 void minimizeConsoleWindow()
 {
 	const HWND handle = GetConsoleWindow();
@@ -264,12 +290,14 @@ void maximizeConsoleWindow()
 }
 
 
-
+// Main update function for the scene
 void OpenGL::updateRefreshrate()
 {
+	// Update the display, only when called by the timer function, this is how I lock the frame rate
 	glutPostRedisplay();
 
 
+	// For all valid objects in the scene, update them
 	for (const auto& object : objects)
 	{
 		if (object != nullptr)
@@ -278,6 +306,7 @@ void OpenGL::updateRefreshrate()
 		}
 	}
 
+	// Update the lighting data for all the objects, I think this is needed
 	glLightfv(GL_LIGHT0,GL_AMBIENT, &(lightData->ambient.x));
 
 	glLightfv(GL_LIGHT0, GL_DIFFUSE, &(lightData->diffuse.x));
@@ -285,6 +314,8 @@ void OpenGL::updateRefreshrate()
 	glLightfv(GL_LIGHT0, GL_SPECULAR, &(lightData->specular.x));
 
 	glLightfv(GL_LIGHT0, GL_POSITION, &(lightPosition->x));
+
+	// Boolean logic stored here for some moving objects
 
 	rotation += 1;
 
@@ -312,13 +343,15 @@ void OpenGL::updateRefreshrate()
 		scaleFlip = !scaleFlip;
 	}
 
+	// Update the camera position
 	GLUTCallbacks::updateCamera();
 }
 
 
-
+// Function parse for keyboard controls
 void OpenGL::keyboardControls(const unsigned char key, int x, int y)
 {
+	// If the main menu is active, parse the input for the main menu
 	if (mainMenu)
 	{
 		switch (key)
@@ -355,6 +388,7 @@ void OpenGL::keyboardControls(const unsigned char key, int x, int y)
 
 		if (play)
 		{
+			// If the play button is selected, start the scene and reset the camera position
 			mainMenu = false;
 			cameraX = 0.75f;
 			cameraY = 0.0f;
@@ -363,6 +397,7 @@ void OpenGL::keyboardControls(const unsigned char key, int x, int y)
 			cameraPitch = 0.0f;
 		}
 	}
+	// If the main menu is not active, parse the input for the scene
 	else
 	{
 		switch (key)
@@ -403,8 +438,9 @@ void OpenGL::keyboardControls(const unsigned char key, int x, int y)
 			fullScreen = true;
 			break;
 
-		case 'l':
+		case 'l': // Print the linked list of objects
 		case 'L':
+
 			glutSetCursor(GLUT_CURSOR_LEFT_ARROW);
 			glutLeaveFullScreen();
 			fullScreen = false;
@@ -428,7 +464,7 @@ void OpenGL::keyboardControls(const unsigned char key, int x, int y)
 
 			break;
 
-		case 'f':
+		case 'f': // Fullscreen toggle
 		case 'F':
 
 			if (!fullScreen)
@@ -444,7 +480,7 @@ void OpenGL::keyboardControls(const unsigned char key, int x, int y)
 
 			break;
 
-		case 'w':
+		case 'w': // Camera movement
 		case 'W':
 			UpButton = true;
 			break;
@@ -464,9 +500,10 @@ void OpenGL::keyboardControls(const unsigned char key, int x, int y)
 			RightButton = true;
 			break;
 
-		case 'x':
+		case 'x': // Texture change
 		case 'X':
 
+			// Delete all cube objects
 			for (int i = 0; i < cubeNumber; i++)
 			{
 				if (objects[i] != nullptr)
@@ -476,12 +513,14 @@ void OpenGL::keyboardControls(const unsigned char key, int x, int y)
 				}
 			}
 
-
+		// Call the main texture change function
 			textureChange();
 
 			break;
 
-		case 8:
+		case 8: // 8 = backspace key
+
+			// Delete object from the linked list
 			glutSetCursor(GLUT_CURSOR_LEFT_ARROW);
 			glutLeaveFullScreen();
 			fullScreen = false;
@@ -489,6 +528,7 @@ void OpenGL::keyboardControls(const unsigned char key, int x, int y)
 			std::cout << "Enter the object index you want to delete: " << '\n';
 
 
+		// Error handling for the input
 			if (!(std::cin >> temp))
 			{
 				std::cerr << "Invalid input." << '\n';
@@ -502,6 +542,7 @@ void OpenGL::keyboardControls(const unsigned char key, int x, int y)
 				break;
 			}
 
+		// Error handling for the input
 			if (temp < 0 || temp > objectLimit - 1)
 			{
 				std::cerr << "Invalid index. Index must be between 0 and " << count - 1 << '\n';
@@ -514,6 +555,8 @@ void OpenGL::keyboardControls(const unsigned char key, int x, int y)
 				break;
 			}
 
+		// Delete the object from the linked list
+		// Stealing the delete after function and minus one to get the correct index
 			if (lists->DeleteAfter(lists->GetNode(temp - 1)))
 			{
 				delete objects[temp - 1];
@@ -525,6 +568,7 @@ void OpenGL::keyboardControls(const unsigned char key, int x, int y)
 				glutFullScreen();
 				fullScreen = true;
 			}
+			// Error handling for the input
 			else
 			{
 				std::cout << "Previous node cannot be null or the last node." << '\n';
@@ -535,21 +579,23 @@ void OpenGL::keyboardControls(const unsigned char key, int x, int y)
 			}
 			break;
 
-		case't':
+		case't': // Mouse toggle
 		case 'T':
 			if (mouseToggle)
 			{
+				// Lock the mouse to the window and hide the cursor
 				mouseToggle = false;
 			}
 			else
 			{
+				// Unlock the mouse from the window and show the cursor
 				mouseToggle = true;
 				glutSetCursor(GLUT_CURSOR_LEFT_ARROW);
 			}
 
 			break;
 
-		case 'c':
+		case 'c': // Show console for 5 seconds
 		case 'C':
 			glutSetCursor(GLUT_CURSOR_LEFT_ARROW);
 			glutLeaveFullScreen();
@@ -561,11 +607,12 @@ void OpenGL::keyboardControls(const unsigned char key, int x, int y)
 			fullScreen = true;
 			break;
 
-		case 'q':
+		case 'q': // Lighting toggle
 		case 'Q':
 
 			if (lightingEnabled)
 			{
+				// Disable lighting and material for all objects
 				materialEnabled = false;
 
 				for (auto& object : objects)
@@ -579,11 +626,12 @@ void OpenGL::keyboardControls(const unsigned char key, int x, int y)
 			}
 			else
 			{
+				// Enable lighting for all objects
 				lightingEnabled = true;
 			}
 
 			break;
-		case'e':
+		case'e': // Material toggle
 		case'E':
 
 			if (materialEnabled && lightingEnabled)
@@ -611,8 +659,9 @@ void OpenGL::keyboardControls(const unsigned char key, int x, int y)
 
 			break;
 
-		case 32:
+		case 32: // 32 = space key
 
+			// Toggle object movement
 			if (cubeMovement)
 			{
 				for (auto& object : objects)
@@ -635,21 +684,21 @@ void OpenGL::keyboardControls(const unsigned char key, int x, int y)
 				}
 				cubeMovement = true;
 			}
-				
+
 
 			break;
 
-			case 'z':
+		case 'z': // Fog toggle
 		case 'Z':
 
-			if  (fogEnabled)
+			if (fogEnabled)
 			{
-								glDisable(GL_FOG);
+				glDisable(GL_FOG);
 				fogEnabled = false;
 			}
 			else
 			{
-								glEnable(GL_FOG);
+				glEnable(GL_FOG);
 				fogEnabled = true;
 			}
 
@@ -661,8 +710,10 @@ void OpenGL::keyboardControls(const unsigned char key, int x, int y)
 	}
 }
 
+// Function to parse the keyboard input if the key is not pressed
 void OpenGL::keyboardControlsUp(const unsigned char key, int x, int y)
 {
+	// If the WASD keys are not pressed, revert the booleans
 	if (UpButton || DownButton || LeftButton || RightButton)
 	{
 		switch (key)
@@ -692,12 +743,15 @@ void OpenGL::keyboardControlsUp(const unsigned char key, int x, int y)
 	}
 }
 
+// Function to parse the special keyboard input
 void OpenGL::keyboardSpecial(int key, int x, int y)
 {
+	// If the main menu is active, parse the input for the main menu
 	if (mainMenu)
 	{
 		switch (key)
 		{
+		// Menu button logic
 		case GLUT_KEY_LEFT:
 
 			if (!playSelected)
@@ -730,8 +784,10 @@ void OpenGL::keyboardSpecial(int key, int x, int y)
 			cameraPitch = 0.0f;
 		}
 	}
+	// If the main menu is not active, parse the input for the scene
 	else
 	{
+		// Camera movement logic
 		switch (key)
 		{
 		case GLUT_KEY_UP:
@@ -750,15 +806,16 @@ void OpenGL::keyboardSpecial(int key, int x, int y)
 			RightButton = true;
 			break;
 
-			
 
 		default: ;
 		}
 	}
 }
 
+// Function to parse the special keyboard input if the key is not pressed
 void OpenGL::keyboardSpecialUp(int key, int x, int y)
 {
+	// If the Arrow keys are not pressed, revert the booleans
 	if (UpButton || DownButton || LeftButton || RightButton)
 	{
 		switch (key)
@@ -784,7 +841,7 @@ void OpenGL::keyboardSpecialUp(int key, int x, int y)
 	}
 }
 
-
+// Update the camera position called in the main update function
 void OpenGL::updateCamera()
 {
 	glLoadIdentity();
@@ -808,21 +865,27 @@ void OpenGL::updateCamera()
 	{
 		cameraX += 0.25f;
 	}
+	// Update the camera position based on the camera variables
 	glTranslatef(-cameraX, -cameraY, -cameraZ);
 	glRotatef(-cameraPitch, 1.0f, 0.0f, 0.0f);
 	glRotatef(-cameraYaw, 0.0f, 1.0f, 0.0f);
 }
 
-
+// Initialize the OpenGL functions and the window
 void OpenGL::InitGL(int argc, char* argv[])
 {
+	// Initialize the GLUT functions
 	GLUTCallbacks::Init(this);
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_DEPTH);
+
+	// Set the window size and create the window
 	glutInitWindowSize(screenWidth, screenHeight);
-	glutCreateWindow("3D Cubes Test");
+	glutCreateWindow("GRAPHICS SIMULATION BY RYAN MOAKES");
 	glutFullScreen();
 	minimizeConsoleWindow();
+
+	// Enable the depth buffer and the auto normal and normalize functions
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_AUTO_NORMAL);
 	glEnable(GL_NORMALIZE);
@@ -853,10 +916,10 @@ void OpenGL::InitGL(int argc, char* argv[])
 
 
 	/// LINE SMOOTHING
-
 	glEnable(GL_LINE_SMOOTH);
 	glLineWidth(lineWidth);
 
+	// 3D Transformation Pipeline
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	glViewport(0, 0, screenWidth, screenHeight);
@@ -864,23 +927,26 @@ void OpenGL::InitGL(int argc, char* argv[])
 	glMatrixMode(GL_MODELVIEW);
 }
 
+// Create all of objects in the scene bar the glut objects
 void OpenGL::InitObjects()
 {
 	/// Toggle to make sure the cubes are only instanced once.
 	/// Pretty sure they are already, but it cant hurt.
 	if (toggle == false)
 	{
+		// Load the cube mesh and texture
 		auto* cubeMesh = MeshLoader::texLoad(("Objects/cube.txt"));
 
 		auto* texture = new Texture2D();
 
 		texture->Load(("Textures/stars.raw"), 512, 512);
 
+		// Create the cube objects and add them to the linked list
 		for (int i = 0; i < cubeNumber; i++)
 		{
 			lists->InsertNode(i);
 
-
+			// Parse the random values for the cube objects
 			objects[i] = new Cube(cubeMesh, texture, ((rand() % 400) / 10.0f) - 20.0f, ((rand() % 200) / 10.0f) - 10.0f,
 			                      -(rand() % 1000) / 10.0f);
 		}
@@ -897,11 +963,14 @@ void OpenGL::InitObjects()
 		|                                                                                                                          |
 		//-------------------------------------------------------------------------------------------------------------------------//
 		*/
+
+		// Load the pyramid mesh
 		auto* pyramidMesh = MeshLoader::noTexLoad(("Objects/pyramid.txt"));
 
-
+		// Create the pyramid objects and add them to the linked list
 		for (int i = cubeNumber; i < objectCount; i++)
 		{
+			// Parse the random values for the pyramid objects
 			objects[i] = new StaticObjects(pyramidMesh, ((rand() % 400) / 10.0f) - 20.0f,
 			                               ((rand() % 200) / 10.0f) - 10.0f, -(rand() % 1000) / 10.0f);
 
@@ -912,6 +981,7 @@ void OpenGL::InitObjects()
 	}
 }
 
+// Initialize the lighting data for the scene
 void OpenGL::InitLighting()
 {
 	lightPosition = new Vector4();
@@ -939,27 +1009,30 @@ void OpenGL::InitLighting()
 	lightData->specular.w = 1.0;
 }
 
-
+// Function to draw the string text on the screen
 void OpenGL::DrawString(const std::string& text, Color* color, float x, float y)
 {
+	// Text location variables
 	const GLfloat textLocationX = x;
 	const GLfloat textLocationY = y;
 
+	// Pipeline setup for the text rendering, you need to do this or the text will not stay on the camera,
+	// this is because the text will be rendered in 3D space
 	glMatrixMode(GL_PROJECTION);
 	glPushMatrix();
 	glLoadIdentity();
 	glOrtho(-1, 1, -1, 1, -1, 1);
-
 	glMatrixMode(GL_MODELVIEW);
 	glPushMatrix();
 	glLoadIdentity();
 
+	// Set the color of the text according to the color variable it is called with
 	glColor3f(color->r, color->g, color->b);
 
 	glRasterPos2f(textLocationX, textLocationY);
 
 	// Render each character in the string
-	for (char c : text)
+	for (const char c : text)
 	{
 		glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, c);
 	}
@@ -970,26 +1043,28 @@ void OpenGL::DrawString(const std::string& text, Color* color, float x, float y)
 	glMatrixMode(GL_MODELVIEW);
 }
 
-
+// Parse in mouse rotation for the camera
 void OpenGL::mouseRotation(int x, int y)
 {
+	// If the main menu is not active, parse the mouse input for the scene
 	if (!mainMenu)
 	{
 		if (fullScreen)
 		{
 			if (!mouseToggle)
 			{
-				GLint prevMouseX = screenWidth / 2;
-				GLint prevMouseY = screenHeight / 2;
+				// Mouse rotation logic
+				GLfloat prevMouseX = screenWidth / static_cast<GLfloat>(2);
+				GLfloat prevMouseY = screenHeight / static_cast<GLfloat>(2);
 				constexpr GLfloat sensitivity = 0.05f;
 
-				GLint deltaX = x - prevMouseX;
-				GLint deltaY = y - prevMouseY;
+				const GLfloat deltaX = x - prevMouseX;
+				const GLfloat deltaY = y - prevMouseY;
 
 				cameraYaw -= deltaX * sensitivity;
 				cameraPitch -= deltaY * sensitivity;
 
-
+				// Clamp the camera pitch to prevent the camera from flipping
 				if (cameraPitch > 89.0f)
 				{
 					cameraPitch = 89.0f;
@@ -999,27 +1074,29 @@ void OpenGL::mouseRotation(int x, int y)
 					cameraPitch = -89.0f;
 				}
 
-				prevMouseX = x;
-				prevMouseY = y;
-
+				// Hide the cursor and lock the mouse to the window
 				glutSetCursor(GLUT_CURSOR_NONE);
 				glutWarpPointer(screenWidth / 2, screenHeight / 2);
 			}
 		}
 		else
 		{
+			// Free the cursor from its cage of torment
 			glutSetCursor(GLUT_CURSOR_LEFT_ARROW);
 		}
 	}
 	else
 	{
+		// If the main menu is active, hide the cursor and lock the mouse to the window
 		glutSetCursor(GLUT_CURSOR_NONE);
 		glutWarpPointer(screenWidth / 2, screenHeight / 2);
 	}
 }
 
+// Parse in mouse wheel input for the camera
 void OpenGL::mouseWheel(int wheel, int direction, int x, int y)
 {
+	// Look... I don't like how this function looks either but it works
 	if (!mainMenu)
 	{
 		if (fullScreen)
@@ -1028,6 +1105,7 @@ void OpenGL::mouseWheel(int wheel, int direction, int x, int y)
 			{
 				if (wheel == 0)
 				{
+					// Zoom in and out logic
 					cameraZ += direction * 0.5f;
 				}
 
@@ -1044,13 +1122,14 @@ void OpenGL::mouseWheel(int wheel, int direction, int x, int y)
 	}
 }
 
+// Function to change the texture of the cubes
 void OpenGL::textureChange()
 {
 	cubeMovement = true;
 
+	// Boolean flip logic to change the texture of the cubes by re-initializing them
 	if (!texChange)
 	{
-		
 		auto* cubeMesh = MeshLoader::texLoad(("Objects/cube.txt"));
 
 		auto* texture = new Texture2D();
@@ -1068,7 +1147,6 @@ void OpenGL::textureChange()
 	}
 	else
 	{
-		
 		auto* cubeMesh = MeshLoader::texLoad(("Objects/cube.txt"));
 
 		auto* texture = new Texture2D();
@@ -1086,7 +1164,7 @@ void OpenGL::textureChange()
 	}
 }
 
-
+// Destructor for the OpenGL class, deletes all objects in the scene and the lighting data
 OpenGL::~OpenGL()
 {
 	for (auto& object : objects)
@@ -1098,6 +1176,10 @@ OpenGL::~OpenGL()
 		}
 	}
 
+	delete lightData;
 
+	delete lightPosition;
+
+	// Deletes the class itself
 	GLUTCallbacks::Destroy();
 }

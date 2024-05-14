@@ -26,7 +26,7 @@ public:
 	/// Cube draw function that is called every frame to 
 	/// render the postions of the cube from the mesh data stored.
 	/// </summary>
-	void DrawCubes();
+	void DrawCubes() override;
 
 	/// <summary>
 	/// Draws a wire frame around the cube object.
@@ -41,19 +41,19 @@ public:
 	/// <summary>
 	/// Sets the material of the cubes using material data
 	/// </summary>
-	void SetMaterial()  ;
+	void SetMaterial();
 
-// ----------------------------- PRIVATE VARIBLES ----------------------------- //
+	// ----------------------------- PRIVATE VARIBLES ----------------------------- //
 private:
 	static Vertex indexedVerticesLINE[];
 	static GLushort indicesLINE[];
 	GLfloat rotation;
 	Vector3 position;
 	GLfloat velocity = 0.5f;
-	
+
 
 	Material* material;
-// ----------------------------- PRIVATE VARIBLES ----------------------------- //
+	// ----------------------------- PRIVATE VARIBLES ----------------------------- //
 };
 #endif // _CUBE_H
 // ----------------------------- CUBE CLASS ----------------------------- //

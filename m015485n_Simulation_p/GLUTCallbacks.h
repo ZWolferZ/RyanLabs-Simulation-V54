@@ -41,7 +41,7 @@ namespace GLUTCallbacks
 	void keyboardSpecialUp(int key, int x, int y);
 
 	/// <summary>
-	/// Updates the position of the camera each time it is called, relative to the world orgin
+	/// Updates the position of the camera each time it is called, relative to the world origin
 	/// </summary>
 	void updateCamera();
 
@@ -56,12 +56,12 @@ namespace GLUTCallbacks
 	void Destroy();
 
 	/// <summary>
-	/// Parses the mouse rotation into the mouse loop to update the camera posistion
+	/// Parses the mouse rotation into the mouse loop to update the camera position
 	/// </summary>
 	void mouseRotation(int x, int y);
 
 	/// <summary>
-	/// Parses the scroll wheel into the glut main loop to increase/decrease the Z posistion.
+	/// Parses the scroll wheel into the glut main loop to increase/decrease the Z position.
 	/// </summary>
 	void mouseWheel(int wheel, int direction, int x, int y);
 }

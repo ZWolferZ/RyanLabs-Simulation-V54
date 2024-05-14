@@ -1,12 +1,13 @@
+// ----------------------------- INCLUDES ----------------------------- //
 #pragma once
 #ifndef _STRUCTURES_H
 #define STRUCTURES_H
 #include <Windows.h>
 #include <gl/GL.h>
-
 #include "Texture2D.h"
+// ----------------------------- INCLUDES ----------------------------- //
 
-
+// ----------------------------- DATA STRUCTURES AND CONSTANTS ----------------------------- //
 enum Constants
 {
 	refreshRate = 16,
@@ -69,7 +70,7 @@ struct Lighting
 
 struct Material
 {
-		Vector4 ambient;
+	Vector4 ambient;
 	Vector4 diffuse;
 	Vector4 specular;
 	GLfloat shininess;
@@ -95,7 +96,9 @@ struct OBJMesh
 	GLint vertexCount, indexCount, normalCount, texCoordCount;
 };
 
+// ----------------------------- DATA STRUCTURES AND CONSTANTS ----------------------------- //
 
+// ----------------------------- GLOBAL VARIABLES ----------------------------- //
 // Screen Metrics
 const GLint screenWidth = GetSystemMetrics(SM_CXSCREEN);
 const GLint screenHeight = GetSystemMetrics(SM_CYSCREEN);
@@ -109,12 +112,5 @@ constexpr GLint zFar = 50;
 // Fog Varibles
 constexpr GLfloat fogColor[] = {0, 0, 0, 0};
 constexpr GLfloat fogDensity = 0.4f;
-
-// Lighting Varibles
-constexpr GLfloat lightAmbient[] = {1.0, 1.0, 1.0, 1.0};
-constexpr GLfloat lightDiffuse[] = {1.0, 1.0, 1.0, 1.0};
-constexpr GLfloat lightSpecular[] = {1.0, 1.0, 1.0, 1.0};
-constexpr GLfloat lightPosition[] = {0.0, 0.0, 0.0, 1.0};
-
-
 #endif // !_STRUCTURES_H
+// ----------------------------- GLOBAL VARIABLES ----------------------------- //
