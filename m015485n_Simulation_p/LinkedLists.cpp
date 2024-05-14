@@ -25,7 +25,7 @@ void LinkedLists::InsertFirst(int d)
 	head = newNode;
 }
 
-void LinkedLists::InsetNode(int d)
+void LinkedLists::InsertNode(int d)
 {
 	auto* newNode = new ListNode();
 	newNode->data = d;

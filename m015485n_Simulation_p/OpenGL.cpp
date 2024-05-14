@@ -44,8 +44,6 @@ Color c4 = {1.0f, 1.0f, 1.0f};
 
 OpenGL::OpenGL(int argc, char* argv[])
 {
-	// Get a random seed by using the current time and the thread id
-
 	srand(seed);
 	InitGL(argc, argv);
 	InitObjects();
@@ -141,22 +139,22 @@ void OpenGL::Display() const
 			DrawString("TEXTURE: PENGUINS", &c, 0.0f, 0.8f);
 		}
 
-			if (cubeMovement)
+	    if (cubeMovement)
 		{
-						DrawString("OBJECT MOVEMENT ENABLED", &c, 0.0f, 0.75f);
+			DrawString("OBJECT MOVEMENT ENABLED", &c, 0.0f, 0.75f);
 		}
 		else
 		{
-						DrawString("OBJECT MOVEMENT DISABLED", &c, 0.0f, 0.75f);
+			DrawString("OBJECT MOVEMENT DISABLED", &c, 0.0f, 0.75f);
 		}
-			if (fogEnabled)
-			{
-						DrawString("FOG ENABLED", &c, 0.0f, 0.7f);
-			}
-			else
-			{
-						DrawString("FOG DISABLED", &c, 0.0f, 0.7f);
-			}
+		if (fogEnabled)
+		{
+			DrawString("FOG ENABLED", &c, 0.0f, 0.7f);
+	    }
+		else
+		{
+		   DrawString("FOG DISABLED", &c, 0.0f, 0.7f);
+		}
 
 		if (lightingEnabled)
 		{
@@ -279,7 +277,6 @@ void OpenGL::updateRefreshrate()
 			object->Update();
 		}
 	}
-
 
 	glLightfv(GL_LIGHT0,GL_AMBIENT, &(lightData->ambient.x));
 
@@ -881,7 +878,7 @@ void OpenGL::InitObjects()
 
 		for (int i = 0; i < cubeNumber; i++)
 		{
-			lists->InsetNode(i);
+			lists->InsertNode(i);
 
 
 			objects[i] = new Cube(cubeMesh, texture, ((rand() % 400) / 10.0f) - 20.0f, ((rand() % 200) / 10.0f) - 10.0f,
@@ -908,7 +905,7 @@ void OpenGL::InitObjects()
 			objects[i] = new StaticObjects(pyramidMesh, ((rand() % 400) / 10.0f) - 20.0f,
 			                               ((rand() % 200) / 10.0f) - 10.0f, -(rand() % 1000) / 10.0f);
 
-			lists->InsetNode(i);
+			lists->InsertNode(i);
 		}
 
 		toggle = true;
